@@ -37,6 +37,7 @@ button {
 
 input:focus {
     outline: none;
+    border: 2px solid rgba(40, 40, 40, 0.9);
 }
 
 .main-header{
@@ -57,18 +58,37 @@ input:focus {
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    margin: 0 1rem;
+    margin: 0;
 }
 
 #nav__title {
     display: inline;
     font-family: 'Lato', sans-serif;
-    font-size: 1.65rem;
+    font-size: 1.7rem;
     color: #f8d640;
     /* text-shadow: 1px 1px 1.5px gray, -1px -1px 0px rgba(255, 255, 255, 0.4); */
 
+}
+
+#nav__menu {
+    display: inline;
+    font-size: 1.3rem;
+    line-height: 1.3rem;
+    padding: 0.55rem 0.9rem;
+    color: #0a020a;
+    background-color: #fbe16a;
+    border-radius: 5px;
+    border: 2px solid rgba(250, 250, 250, 0.5);
+    font-family: 'Lato', sans-serif;
+    outline: none;    
+    vertical-align: middle;
+    text-transform: uppercase;
+}
+
+#nav__menu:active {
+    border: 3px solid rgba(250, 250, 250, 0.5);
 }
 
 .nav__items {
@@ -78,7 +98,7 @@ input:focus {
 }
 
 .nav__item {
-    display: inline;
+    display: block;
     /* background-color: rgba(219, 244, 251, 0.9); */
     
     padding: 0.45rem 0.9rem;
