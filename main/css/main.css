@@ -1,1 +1,181 @@
-/* . */
+main {
+    min-height: 100%;
+}
+
+ul {
+    -webkit-padding-start: 0;
+}
+
+.forced-line-break {
+    display: inline-block;
+    width: 100%;
+}
+
+.signup-container {
+    order: 0;
+    position: relative;
+    min-height: 33.75rem;
+    width: 100%;
+    background: url(../images/skillet-bg-small.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 35% 100%;
+}
+
+.signup__content {
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    /* background: rgba(190, 199, 187, 0.5); */
+    /* filter: brightness(0.9) sepia(50%); */
+    width: 93%;
+    height: 100%;
+    margin: 0 3.5%;
+    
+}
+
+.signup__space {
+    order: 0;
+    width: 100%;
+    height: 25%;
+}
+
+.signup__form-container {
+    order: 1;
+    width: 100%;
+    height: 75%;
+    vertical-align: middle;
+    /* filter: brightness(0.1); */
+    /* background: linear-gradient(to right, rgba(53, 53, 53, 0.5) 15%, transparent); */
+    color: rgb(235, 235, 235);
+}
+
+.signup__text {
+    text-align: left;
+    vertical-align: middle;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    top: 5%;
+    margin: 0 auto;
+    left: 5%;
+    right: 5%;
+    text-shadow: 1px 1px 2px rgb(27, 14, 29), -1px -1px rgb(27, 14, 29);
+}
+
+.signup__text h1 {
+    text-align: center;
+    min-width: 15.875rem;
+    max-width: 45.625rem;
+    font-size: 2.4rem;
+    text-shadow: 2px 2px 3px #140314, -1px -1px 0px #140314;
+}
+
+#signup-submit {
+    display: block;
+    text-align: center;
+    padding: 0.5rem;
+    margin-top: 0rem;
+    min-width: 13.5rem;
+    width: 70%;
+    min-height: 4rem;
+    max-width: 40.625rem;
+    font-size: 1.5rem;
+    border: rgb(20, 3, 20) solid 1.5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 1px 1px 2px 2px rgba(89, 89, 89, 0.5); 
+    box-shadow: 1px 1px 2px 2px rgba(89, 89, 89, 0.5);
+    color: #0a020a;
+    background-color: #fbe16a;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0px rgba(255, 203, 255, 0.507);
+}
+
+.perks__container {
+    position: static;
+    order: 1;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 25rem;
+    height: 70rem;
+    /* border: 1px solid black; */
+    text-align: center;
+    vertical-align: middle;
+    padding: 5rem 0;
+    background-color: rgb(29, 29, 29);
+}
+
+.perks__item {
+    min-width: 33%;
+    width: 100%;
+    height: 33.33%;
+    margin: 0 1rem;
+    /* border: 1px solid black; */
+}
+
+.perks__item h1, .perks__item p {
+    margin: 0;
+    
+    color: rgb(241, 241, 241);
+}
+
+.perks__item h1 {
+    font-size: 1.75rem;
+    /* line-height: 1.8rem; */
+    text-shadow: 1px 1px 0px rgb(109, 107, 89);
+    font-family: 'Lato', sans-serif;
+}
+
+.perks__item p {
+    margin-top: 0.4rem;
+    font-size: 1.3rem;
+    line-height: 1.7rem;
+}
+
+.perks__logo {
+    display: inline-block;
+    /* height: 60%; */
+    min-height: 7.3rem;
+    /* border: 1px solid black; */
+}
+
+.perks__logo-image {
+    width: 9rem;
+    height: 9rem;
+    background-color: #fbe16a;
+    border-radius: 50%;
+    vertical-align: middle;
+    overflow: hidden;
+    border: 2px solid rgba(219, 219, 219, 0.397);
+}
+
+.perks__logo svg {
+    display: inline-block;
+    width: 6rem;
+    height: 6rem;
+    margin: 1.5rem;
+    vertical-align: middle;
+    filter:  invert(10%) sepia(1%) saturate(0%) hue-rotate(7deg) brightness(108%) contrast(99%);
+}
+
+.perks__logo image {
+    text-align: center;
+    overflow: hidden;
+    width: 6rem;
+    height: 6rem;
+}
+
+.perks__text {
+    width: 40%;
+    min-width: 15rem;
+    height: 50%;
+    margin: 0rem auto;
+    vertical-align: middle;
+    margin-top: 1rem;
+    
+}
