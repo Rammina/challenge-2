@@ -16,10 +16,10 @@ ul {
     position: relative;
     min-height: 33.75rem;
     width: 100%;
-    background: url(../images/skillet-bg-small.png);
-    background-size: cover;
+    background: url(../images/home-tent-small.png);
+    background-size: 750px 540px;
     background-repeat: no-repeat;
-    background-position: 35% 100%;
+    background-position: 56% 0%;
 }
 
 .signup__content {
@@ -31,19 +31,18 @@ ul {
     width: 93%;
     height: 100%;
     margin: 0 3.5%;
-    
 }
 
 .signup__space {
     order: 0;
     width: 100%;
-    height: 25%;
+    height: 20%;
 }
 
 .signup__form-container {
     order: 1;
     width: 100%;
-    height: 75%;
+    height: 80%;
     vertical-align: middle;
     /* filter: brightness(0.1); */
     /* background: linear-gradient(to right, rgba(53, 53, 53, 0.5) 15%, transparent); */
@@ -58,7 +57,7 @@ ul {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    top: 5%;
+    top: 2%;
     margin: 0 auto;
     left: 5%;
     right: 5%;
@@ -71,6 +70,7 @@ ul {
     max-width: 45.625rem;
     font-size: 2.4rem;
     text-shadow: 2px 2px 3px #140314, -1px -1px 0px #140314;
+    margin: 1rem 0;
 }
 
 #signup-submit {
@@ -78,11 +78,11 @@ ul {
     text-align: center;
     padding: 0.5rem;
     margin-top: 0rem;
-    min-width: 13.5rem;
-    width: 70%;
-    min-height: 4rem;
     max-width: 40.625rem;
-    font-size: 1.5rem;
+    min-width: 9rem;
+    width: 25%;
+    min-height: 3rem;
+    font-size: 1.3rem;
     border: rgb(20, 3, 20) solid 1.5px;
     border-radius: 5px;
     -webkit-box-shadow: 1px 1px 2px 2px rgba(89, 89, 89, 0.5); 
@@ -178,4 +178,84 @@ ul {
     vertical-align: middle;
     margin-top: 1rem;
     
+}
+
+.products__container {
+    position: static;
+    order: 1;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 25rem;
+    height: calc(70rem + 270vw);
+    /* border: 1px solid black; */
+    text-align: center;
+    vertical-align: middle;
+    padding: 5rem 0;
+    background-color: rgb(36, 36, 36);
+}
+
+.products__item {
+    min-width: 33%;
+    width: 100%;
+    height: 16.66%;
+    margin: 0 1rem;
+    /* border: 1px solid black; */
+}
+
+.products__item h1, .products__item p {
+    margin: 0;
+    
+    color: rgb(241, 241, 241);
+}
+
+.products__item h1 {
+    font-size: 1.75rem;
+    /* line-height: 1.8rem; */
+    text-shadow: 1px 1px 0px rgb(109, 107, 89);
+    font-family: 'Lato', sans-serif;
+}
+
+.products__item p {
+    margin-top: 0.4rem;
+    font-size: 1.3rem;
+    line-height: 1.7rem;
+}
+
+.products__logo {
+    display: inline-block;
+    width: 100%;
+    height: calc(1.5rem + 60vw);
+    max-height: 18.75rem;
+    min-height: 7.3rem;
+    margin: 0 auto;
+    /* border: 1px solid black; */
+}
+
+.products__logo-image {
+    width: 100%;
+    max-width: 25rem;
+    height: calc(1.5rem + 60vw);
+    min-height: 11.5rem;
+    max-height: 18.75rem;
+    background-color: #fbe16a;
+    border-radius: 3px;
+    vertical-align: middle;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 2px solid rgba(219, 219, 219, 0.397);
+}
+
+.product-img  {
+    width: 100%;
+    height: 100%;
+}
+
+.products__text {
+    width: 40%;
+    min-width: 15rem;
+    height: 20%;
+    margin: 0rem auto;
+    vertical-align: middle;
+    margin-top: 0.6rem;
 }
