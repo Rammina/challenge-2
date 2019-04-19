@@ -146,11 +146,10 @@ li {
     margin: 0 auto;
     cursor: pointer;
     opacity: 0.9;
-    
 }
 
 .nav__item:focus {
-    border: 1px solid #eee;
+    border: 2px solid #eee;
     opacity: 1;
 }
 
@@ -223,13 +222,25 @@ li {
 }
 
 .footer__logo  {
-    display: inline;
+    display: inline-block;
     text-align: center;
     text-decoration: none;
     margin: 0 5%;
+    width: 2rem;
+    height: 2rem;
+}
+
+.footer__logo-link {
+    border: none;
+    padding: 0;
+}
+
+.footer__logo-link:focus {
+    border: none;
 }
 
 .footer__logo svg {
+    vertical-align: middle;
     width: 2rem;
     height: 2rem;
     /* filter: invert(7%) sepia(63%) saturate(2819%) hue-rotate(317deg) brightness(85%) contrast(98%); */

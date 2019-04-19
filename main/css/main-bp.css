@@ -2,4 +2,19 @@
     .forced-line-break {
         display: inline;
     }
+    .products__container {
+        height: calc(100rem + 170vw);
+    }
+}
+
+@media screen and (min-width: 400px) {
+    .products__container {
+        height: calc(70rem + 295vw);
+    }
+}
+
+@media screen and (min-width: 480px) {
+    .products__container {
+        height: calc(153rem + 20vw);
+    }
 }
