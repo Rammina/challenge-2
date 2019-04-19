@@ -69,7 +69,7 @@ ul {
     min-width: 15.875rem;
     max-width: 45.625rem;
     font-size: 2.4rem;
-    text-shadow: 2px 2px 3px #140314, -1px -1px 0px #140314;
+    text-shadow: 1px 1px 3px #140314, -1px -1px 0px #140314;
     margin: 1rem 0;
 }
 
