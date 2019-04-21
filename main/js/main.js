@@ -10,20 +10,23 @@ let navbar = {
 
 }
 
+
+
 navbar.menubutton.addEventListener("click", function showMenu(){
 	navbar.menuitems.classList.toggle("show");
 });
 
+
+
 window.onscroll = function (event)
 {
-	if(this.scrollY > 100) {
+	if(this.scrollY > 100 ) {
 		navbar.header.classList.add("show");
 		navbar.title.classList.add("show");
-
+		
 	}
 	else if(this.scrollY < 100) {
 		navbar.header.classList.remove("show");
 		navbar.title.classList.remove("show");
-
 	}
 }
