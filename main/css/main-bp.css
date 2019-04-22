@@ -11,10 +11,10 @@
     }
 }
 @media screen and (min-width: 379px) {
-	.signup__space {
+	.shopping__space {
 		height: 33%;
 	}
-	.signup__form-container{
+	.shopping__form-container{
 		height: 67%;
 	}
 }
@@ -31,24 +31,23 @@
 }
 
 @media screen and (min-width: 650px) {
-	
-	.signup-container {
-		background: url(../images/home-tent.png);
+	.shopping-container {
+		background: url(../images/home-tent-2.png);
 		background-size: cover;
 		background-position: 100% 80%;
 		height: 38rem;
 	}
-	.signup__space {
+	.shopping__space {
 		height: 33%;
 	}
-	.signup__form-container {
+	.shopping__form-container {
 		height: 67%;
 	}
-	.signup__content {
+	.shopping__content {
 		width: 85%;
 		margin: 0 7.5%;
 	}
-	.signup__text h1 {font-size: 3.3rem;}
+	.shopping__text h1 {font-size: 3.3rem;}
 
 	.services__container{
 		height: 25rem;
@@ -61,7 +60,7 @@
 		min-width: 12rem;
 		width: 95%;
 	}
-	#signup-shop {
+	#shopping-shop {
 		width: 13rem;
 		height: 4rem;
 		font-size: 1.6rem;
@@ -75,18 +74,23 @@
 		height: 75rem;
 		padding: 0 0.8rem;
 	}
-	.products__item{
+	.products__item {
 		width: 46%;
+		max-width: 26.3rem;
+		min-width: 0%;
 		height: 33.33%;
+	}
+	.products__logo-image {
+		height: calc(32vw);
 	}
 }
 
 @media screen and (min-width: 780px) {
-	.signup-container {
+	.shopping-container {
 		height: 47.5rem;
-		background-position: 78% 50%;
+		background-position: 78% 100%;
 	}
-	.signup__text h1 {
+	.shopping__text h1 {
 		font-size: 3.7rem;
 	}
 	
@@ -98,19 +102,30 @@
 	.forced-line-break-2{
 		display: inline;
 	}
-	.signup__text h1 {
+	.shopping-container {
+		height: 47.5rem;
+		background-position: 78% 95%;
+	}
+	.shopping__space {
+		height: 30%;
+	}
+	.shopping__form-container {
+		height: 70%;
+	}	
+	.shopping__text h1 {
 		font-size: 4.8rem;
 		max-width: 47rem;
 	}
-	/*#signup-shop {width: 15rem;height: 4.5rem;font-size: 1.8rem;}*/
+	/*#shopping-shop {width: 15rem;height: 4.5rem;font-size: 1.8rem;}*/
 	.products__container{
 		height: 50rem;
 	}
 	.products__item{
-		min-width: 30%;
+		min-width: 0%;
 		width: 30%;
 		height: 50%;
-
 	}
-
+	.products__logo-image {
+		height: calc(22vw);
+	}
 }

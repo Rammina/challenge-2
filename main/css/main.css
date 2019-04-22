@@ -11,20 +11,18 @@ ul {
     width: 100%;
 }
 
-        
-
-.signup-container {
+.shopping-container {
     order: 0;
     position: relative;
     min-height: 33.75rem;
     width: 100%;
-    background: url(../images/home-tent-small.png);
-    background-size: 750px 540px;
+    background: url(../images/home-tent-2-small.png);
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: 56% 0%;
+    background-position: 56% 90%;
 }  
 
-.signup__content {
+.shopping__content {
     display: flex;
     flex-wrap: wrap;
     position: absolute;
@@ -35,13 +33,13 @@ ul {
     margin: 0 3.5%;
 }
 
-.signup__space {
+.shopping__space {
     order: 0;
     width: 100%;
     height: 20%;
 }
 
-.signup__form-container {
+.shopping__form-container {
     order: 1;
     width: 100%;
     height: 80%;
@@ -51,7 +49,7 @@ ul {
     color: rgb(235, 235, 235);
 }
 
-.signup__text {
+.shopping__text {
     text-align: left;
     vertical-align: middle;
     display: flex;
@@ -66,16 +64,15 @@ ul {
     text-shadow: 1px 1px 2px rgb(27, 14, 29), -1px -1px rgb(27, 14, 29);
 }
 
-.signup__text h1 {
+.shopping__text h1 {
     text-align: center;
     min-width: 15.875rem;
-    
     font-size: 2.4rem;
     text-shadow: 1px 1px 3px #140314, -1px -1px 0px #140314;
     margin: 1rem 0;
 }
 
-#signup-shop {
+#shopping-shop {
     display: block;
     text-align: center;
     padding: 0.5rem;
@@ -99,7 +96,6 @@ ul {
 
 .section__title-container {
     width: 100%;
-   
 }
 
 .section__title {
@@ -140,17 +136,15 @@ ul {
     width: 100%;
     height: 33.33%;
     margin: 0 1rem;
-
     /* border: 1px solid black; */
 }
 
-.services__item h1, .services__item p {
+.services__item h3, .services__item p {
     margin: 0;
-    
     color: rgb(241, 241, 241);
 }
 
-.services__item h1 {
+.services__item h3 {
     font-size: 1.85rem;
     /* line-height: 1.8rem; */
     text-shadow: 1px 1px 0px rgb(109, 107, 89);
@@ -235,13 +229,12 @@ ul {
     /* border: 1px solid black; */
 }
 
-.products__item h1, .products__item p {
+.products__item h3, .products__item p {
     margin: 0;
-    
     color: rgb(241, 241, 241);
 }
 
-.products__item h1 {
+.products__item h3 {
     font-size: 1.85rem;
     /* line-height: 1.8rem; */
     text-shadow: 1px 1px 0px rgb(109, 107, 89);

@@ -6,13 +6,12 @@
 		height: 5.75rem;
 		padding-top: 1rem;
 		padding-bottom: 1rem;
-
 		transition: all 0.3s ease;
-		background: linear-gradient(180deg, rgba(67, 67, 71, 0.8), transparent);
+		background: linear-gradient(180deg, rgba(29, 29, 31, 0.801), transparent);
 	}
 	.main-header.show{
 		background-color: rgba(67, 67, 71, 1); 
-		height: 3.75rem;
+		height: 4rem;
 		padding-top: 0rem;
 		padding-bottom: 0rem;	
 	}
@@ -66,3 +65,8 @@
 	}
 }
 
+@media screen and (min-width: 1100px) {
+	.main-nav {
+		max-width: 80rem;
+	}
+}
