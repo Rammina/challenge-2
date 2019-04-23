@@ -30,6 +30,28 @@
     }
 }
 
+@media screen and (min-width: 570px) {
+	.products__container {
+		height: calc(4.5 * (29vw + 0.7rem));
+		max-height: 62rem;
+		padding: 0 0.8rem;
+	}
+	.products__item {
+		width: 45%;
+		max-width: 26.3rem;
+		min-width: 0%;
+		height: 33.33%;
+	}
+	.products__logo {
+		height: calc(34vw - 1rem);
+		min-height: 11.125rem;
+	}
+	.products__logo-image {
+		height: calc(34vw - 1rem);
+		min-height: 11.125rem;
+	}
+}
+
 @media screen and (min-width: 650px) {
 	.shopping-container {
 		background: url(../images/home-tent-2.png);
@@ -69,19 +91,38 @@
 	
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 740px) {
 	.products__container {
-		height: 75rem;
+		height: calc(3 * (14vw + 3.4rem));
+		max-height: 50rem;
 		padding: 0 0.8rem;
 	}
 	.products__item {
-		width: 46%;
+		width: 29%;
 		max-width: 26.3rem;
 		min-width: 0%;
-		height: 33.33%;
+		height: 50%;
+
+		
+	}
+	.products__logo {
+		height: calc(20.5vw);
+		min-height: 9.5rem;
 	}
 	.products__logo-image {
-		height: calc(32vw);
+		height: calc(20.5vw);
+		min-height: 9.5rem;
+
+	}
+	.products__text {
+		min-width: 12.625rem;
+	}
+	.products__text h3 { 
+		display: inline-block;
+		width: 100%;
+		min-width: 0;
+		margin: 0 auto;
+		
 	}
 }
 
@@ -117,15 +158,5 @@
 		max-width: 47rem;
 	}
 	/*#shopping-shop {width: 15rem;height: 4.5rem;font-size: 1.8rem;}*/
-	.products__container{
-		height: 50rem;
-	}
-	.products__item{
-		min-width: 0%;
-		width: 30%;
-		height: 50%;
-	}
-	.products__logo-image {
-		height: calc(22vw);
-	}
+	
 }
