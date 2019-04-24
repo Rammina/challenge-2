@@ -9,6 +9,7 @@ html {
     margin: 0;
     min-height: 200rem;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -143,14 +144,16 @@ li {
     text-align: center;
     margin: 0 auto;
     cursor: pointer;
-    opacity: 0.9;
+    opacity: 1;
     text-transform: uppercase;
 }
 
 .nav__item:focus {
     border: 2px solid #eee;
-    opacity: 1;
     padding-right: 2.5rem;
+}
+.nav__item.current {
+    color: #fbe16a;
 }
 
 .main__footer {

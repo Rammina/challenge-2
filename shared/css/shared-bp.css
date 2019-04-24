@@ -61,7 +61,8 @@
 	}
 
 	.nav__item:focus{
-		padding-right: 0.2rem;
+		padding-right: 0.3rem;
+
 	}
 }
 
