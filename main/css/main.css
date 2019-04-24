@@ -284,6 +284,10 @@ ul {
     opacity: 0;
 }
 
+.products__overlay:hover {
+    opacity: 1;
+}
+
 .products__info {
     display: inline-block;
     vertical-align: middle;
@@ -332,6 +336,10 @@ ul {
     height: 100vh;
     background-color: rgba(126, 126, 126, 0.7);
     display: none;
+}
+
+.backdrop.show {
+    display: block;
 }
 
 .popup {

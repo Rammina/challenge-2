@@ -96,6 +96,7 @@
 		height: calc(3 * (14vw + 3.4rem));
 		max-height: 50rem;
 		padding: 0 0.8rem;
+
 	}
 	.products__item {
 		width: 29%;
@@ -158,5 +159,12 @@
 		max-width: 47rem;
 	}
 	/*#shopping-shop {width: 15rem;height: 4.5rem;font-size: 1.8rem;}*/
-	
+	.products__container{
+		padding: 0 calc(20vw - 12.6rem);
+
+	}
+	.products__item{
+		width: 29.5%;
+		max-width: 26rem;
+	}
 }
