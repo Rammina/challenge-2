@@ -28,7 +28,17 @@ let popup = {
 	
 	backdrop: document.querySelector(".backdrop"),
 	content: document.querySelector(".popup"),
-	close: document.querySelector(".popup__close")
+	close: document.querySelector(".popup__close"),
+	items: document.querySelectorAll(".popup__content-container"),
+
+
+
+	// tents: document.querySelector("#popup-tents"),
+	// cookware: document.querySelector("#popup-cookware"),
+	// hammocks: document.querySelector("#popup-hammocks"),
+	// boots: document.querySelector("#popup-boots"),
+	// backpacks: document.querySelector("#popup-backpacks"),
+	// tools: document.querySelector("#popup-tools")
 	};
 
 
@@ -108,10 +118,71 @@ window.onscroll = function (event)
 
 
 // Clicking each item in the products will open the backdrop pop-up window
-for (let item of products.items){
-	item.addEventListener("click", function(){
+for (let i = 0; i < products.items.length; i++) {
+	products.items[i].addEventListener("click", function() {
 		popup.backdrop.classList.add("show");
 		popup.content.classList.add("show");
+
+		if (i == 0) {
+			for(let i = 0; i < popup.items.length; i++) {
+				if (i !== 0) {
+					popup.items[i].classList.remove("show");
+				}
+				else if (i === 0) {
+					popup.items[i].classList.add("show");
+				}
+			}
+		}
+		else if (i == 1) {
+			for(let i = 0; i < popup.items.length; i++) {
+				if (i !== 1) {
+					popup.items[i].classList.remove("show");
+				}
+				else if (i === 1) {
+					popup.items[i].classList.add("show");
+				}
+			}
+		}
+		else if (i == 2) {
+			for(let i = 0; i < popup.items.length; i++) {
+				if (i !== 2) {
+					popup.items[i].classList.remove("show");
+				}
+				else if (i === 2) {
+					popup.items[i].classList.add("show");
+				}
+			}
+		}
+		else if (i == 3) {
+			for(let i = 0; i < popup.items.length; i++) {
+				if (i !== 3) {
+					popup.items[i].classList.remove("show");
+				}
+				else if (i === 3) {
+					popup.items[i].classList.add("show");
+				}
+			}
+		}
+		else if (i == 4) {
+			for(let i = 0; i < popup.items.length; i++) {
+				if (i !== 4) {
+					popup.items[i].classList.remove("show");
+				}
+				else if (i === 4) {
+					popup.items[i].classList.add("show");
+				}
+			}
+		}
+		else if (i == 5) {
+			for(let i = 0; i < popup.items.length; i++) {
+				if (i !== 5) {
+					popup.items[i].classList.remove("show");
+				}
+				else if (i === 5) {
+					popup.items[i].classList.add("show");
+				}
+			}
+		}
 	});
 }
 

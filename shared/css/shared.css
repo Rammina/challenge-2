@@ -37,12 +37,14 @@ button {
 }
 
 button:focus {
-    border: 4px solid #f8d640;
+    -webkit-box-shadow: 1px 1px 2px 1px #000000, -1px -1px 2px 1px #000000, inset -1px -1px 0px 0px #FFFFFF, inset 1px 1px 0px 0px #FFFFFF; 
+    box-shadow: 1px 1px 2px 1px #000000, -1px -1px 2px 1px #000000, inset -1px -1px 0px 0px #FFFFFF, inset 1px 1px 0px 0px #FFFFFF;
 }
 
 input:focus {
     outline: none;
-    border: 2px solid #f8d640;
+   -webkit-box-shadow: 1px 1px 2px 1px #000000, -1px -1px 2px 1px #000000, inset -1px -1px 0px 0px #FFFFFF, inset 1px 1px 0px 0px #FFFFFF; 
+    box-shadow: 1px 1px 2px 1px #000000, -1px -1px 2px 1px #000000, inset -1px -1px 0px 0px #FFFFFF, inset 1px 1px 0px 0px #FFFFFF;
 }
 
 a {
@@ -50,7 +52,9 @@ a {
 }
 
 a:focus {
-    border: 4px solid #999;
+    outline: none;
+    -webkit-box-shadow: 1px 1px 2px 1px #000000, -1px -1px 2px 1px #000000, inset -1px -1px 0px 0px #FFFFFF, inset 1px 1px 0px 0px #FFFFFF; 
+    box-shadow: 1px 1px 2px 1px #000000, -1px -1px 2px 1px #000000, inset -1px -1px 0px 0px #FFFFFF, inset 1px 1px 0px 0px #FFFFFF;
 }
 
 li {
@@ -149,7 +153,8 @@ li {
 }
 
 .nav__item:focus {
-    border: 2px solid #eee;
+    -webkit-box-shadow: 1px 1px 2px 1px #000000, -1px -1px 2px 1px #000000, inset -1px -1px 0px 0px #FFFFFF, inset 1px 1px 0px 0px #FFFFFF; 
+    box-shadow: 1px 1px 2px 1px #000000, -1px -1px 2px 1px #000000, inset -1px -1px 0px 0px #FFFFFF, inset 1px 1px 0px 0px #FFFFFF;
     padding-right: 2.5rem;
 }
 .nav__item.current {
@@ -234,8 +239,10 @@ li {
 }
 
 .footer__logo-link {
+    display: inline-block;
     border: none;
     padding: 0;
+    height: 2rem;
 }
 
 .footer__logo-link:focus {

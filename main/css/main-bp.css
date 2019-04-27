@@ -168,3 +168,18 @@
 		max-width: 26rem;
 	}
 }
+
+
+/* Aspect ratio breakpoints */
+@media screen and (min-aspect-ratio: 16 / 9) {
+	.popup__image {
+		width: 75vw;
+		max-width: 53.9rem;
+		height: calc(75vw / 6 * 3);
+		max-height: calc(53.9rem / 6 * 3);
+	}
+	.popup__img {
+		
+	}
+}
+
