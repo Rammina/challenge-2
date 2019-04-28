@@ -12,7 +12,7 @@ ul {
 }
 
 .shopping-container {
-    order: 0;
+    /* order: 0; */
     position: relative;
     min-height: 33.75rem;
     width: 100%;
@@ -115,15 +115,13 @@ ul {
 
 .services__container {
     position: static;
-    order: 1;
+    /* order: 1; */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
     width: 100%;
     min-height: 25rem;
     height: 62rem;
-    
     /* border: 1px solid black; */
     text-align: center;
     vertical-align: middle;
@@ -207,7 +205,7 @@ ul {
 
 .products__container {
     position: static;
-    order: 1;
+    /* order: 1; */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -429,4 +427,104 @@ ul {
     height: 30%;
     background-color: green;
     text-align: center;
+}
+
+#about {
+    background-color: rgb(29, 29, 29);
+}
+
+.about__container {
+    position: static;
+    /* order: 1; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    min-height: 25rem;
+    height: 62rem;
+    padding: 0 1rem;
+    padding-left: 0.2rem;
+    /* border: 1px solid black; */
+    text-align: center;
+    vertical-align: middle;
+    background-color: rgb(29, 29, 29);
+}
+
+#center__panel-1 {
+    order: 0;
+}
+
+#content__panel-1 {
+    order: 1;
+}
+
+#center__panel-2 {
+    order: 2;
+}
+
+#content__panel-2 {
+    order: 3;
+}
+
+#center__panel-3 {
+    order: 4;
+}
+
+#content__panel-3 {
+    order: 5;
+}
+
+#center__panel-4 {
+    order: 6;
+}
+
+#content__panel-4 {
+    order: 7;
+}
+
+.about__space {
+    display: none;
+}
+
+/* .about__center {
+    position: relative;
+    width: 4rem;
+    height: 100%;
+    min-width: 4rem;
+    text-align: center;
+     background-color: white; 
+} */
+
+.about__center-line {
+    display: inline-block;
+    position: absolute;
+    width: 2px;
+    height: 62rem;
+    margin: 0 auto;
+    background-color: rgba(235, 229, 223, 0.801);
+}
+
+.about__center-panel {
+    height: 25%;
+}
+
+.about__center-image-container {
+    /* display: inline-block; */
+    z-index: 2;
+    position: relative;
+    width: 4rem;
+    height: 4rem;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 5px solid rgba(235, 229, 223, 0.801);
+    background-color: seagreen;
+}
+
+
+
+.about__content-panel {
+    width: calc(100% - 4rem);
+    height: 25%;
+    border: 1px solid black;
+    background-color: pink;
 }

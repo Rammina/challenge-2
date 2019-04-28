@@ -78,9 +78,10 @@ li {
     max-width: 60rem;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     margin: 0 auto;
+    padding: 0 1rem;
 }
 
 #nav__title {

@@ -2,7 +2,7 @@
 
 // navigation bar objects
 
-let navbar = {
+var navbar = {
 	header: document.querySelector(".main-header"),
 	title: document.querySelector("#nav__title"),
 	menubutton: document.querySelector("#nav__menu"),
@@ -13,18 +13,18 @@ let navbar = {
 
 // Main objects
 
-let services = { 
+var services = { 
 	title: document.querySelector("#services")
 
 };
 // Product section object
-let products = { 
+var products = { 
 	title: document.querySelector("#products"),
 	items: document.querySelectorAll(".products__overlay")
 };
 
 // Backdrops and pop-ups
-let popup = {
+var popup = {
 	
 	backdrop: document.querySelector(".backdrop"),
 	content: document.querySelector(".popup"),
@@ -48,8 +48,8 @@ navbar.menubutton.addEventListener("click", function showMenu(){
 });
 
 // Get the offset top of the section elements 
-let servicesY = services.title.offsetTop - 48;
-let productsY = products.title.offsetTop - 48;
+var servicesY = services.title.offsetTop - 48;
+var productsY = products.title.offsetTop - 48;
 
 // Re-updates the offset upon resizing
 window.onresize = function (event) {
