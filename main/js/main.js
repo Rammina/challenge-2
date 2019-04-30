@@ -41,11 +41,12 @@ var popup = {
 	// tools: document.querySelector("#popup-tools")
 	};
 
+function showMenu() {
+	navbar.menuitems.classList.add("show");
+}
 
-
-navbar.menubutton.addEventListener("click", function showMenu(){
-	navbar.menuitems.classList.toggle("show");
-});
+navbar.menubutton.addEventListener("click", showMenu);
+navbar.menubutton.addEventListener("touchstart", showMenu);
 
 // Get the offset top of the section elements 
 var servicesY = services.title.offsetTop - 48;
