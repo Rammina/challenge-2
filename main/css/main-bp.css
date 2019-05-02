@@ -57,6 +57,24 @@
 		height: calc(34vw - 1rem);
 		min-height: 11.125rem;
 	}
+	.founders__container{
+		height: 25rem;
+	}
+	.founders__item{
+		width: 33%;
+		margin: 0;
+	}
+	.founders__logo-image {
+		width: 12rem;
+		height: 12rem;
+	}
+	.founders__text{
+		min-width: 12rem;
+		width: 95%;
+	}
+	.forced-line-break-3 {
+		display: block;
+	}
 }
 
 @media screen and (min-width: 650px) {
@@ -76,7 +94,15 @@
 		width: 85%;
 		margin: 0 7.5%;
 	}
-	.shopping__text h1 {font-size: 3.3rem;}
+	.shopping__text h1 {
+		font-size: 3.3rem;
+	}	
+	#shopping-shop {
+		width: 13rem;
+		height: 4rem;
+		font-size: 1.6rem;
+	}
+
 
 	.services__container{
 		height: 25rem;
@@ -89,12 +115,10 @@
 		min-width: 12rem;
 		width: 95%;
 	}
-	#shopping-shop {
+	.founders__logo-image {
 		width: 13rem;
-		height: 4rem;
-		font-size: 1.6rem;
+		height: 13rem;
 	}
-
 	
 }
 
@@ -130,7 +154,13 @@
 		width: 100%;
 		min-width: 0;
 		margin: 0 auto;
-		
+	}
+	.founders__logo-image {
+		width: 14rem;
+		height: 14rem;
+	}
+	.forced-line-break-3 {
+		display: inline-block;
 	}
 }
 
