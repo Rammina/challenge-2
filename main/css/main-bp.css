@@ -58,7 +58,7 @@
 		min-height: 11.125rem;
 	}
 	.founders__container{
-		height: 25rem;
+		height: 30rem;
 	}
 	.founders__item{
 		width: 33%;
@@ -68,12 +68,34 @@
 		width: 12rem;
 		height: 12rem;
 	}
-	.founders__text{
-		min-width: 12rem;
+	.founders__text {
 		width: 95%;
+		min-width: 12rem;
+		height: 6.5rem;
 	}
 	.forced-line-break-3 {
 		display: block;
+	}
+	.founders__links-container {
+		/* height: ; */
+		width: 9.0625rem;
+		
+	}
+	
+	.founders__links {
+	
+	}
+	
+	.founders__link {
+		
+		width: 40%;
+	}
+	
+	.founders__logo-link  {
+		
+		height: 3rem;
+		width: 3rem;    
+		
 	}
 }
 
@@ -161,6 +183,27 @@
 	}
 	.forced-line-break-3 {
 		display: inline-block;
+	}
+	.founders__text {
+		height: 4.5rem;
+	}
+	.founders__links-container {
+    	/* height: ; */
+   		width: 11.5rem;
+	}
+
+	.founders__links {
+
+	}
+
+	.founders__link {
+		width: 31%;
+	}
+
+	.founders__logo-link  {
+		height: 3rem;
+		width: 3rem;    
+		
 	}
 }
 

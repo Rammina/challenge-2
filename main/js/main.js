@@ -41,6 +41,12 @@ var popup = {
 	// tools: document.querySelector("#popup-tools")
 	};
 
+var founders = {
+
+	svgs: document.querySelectorAll(".founders__svg"),
+	links: document.querySelectorAll(".founders__logo-link")
+}
+
 function showMenu() {
 	navbar.menuitems.classList.add("show");
 }
@@ -196,3 +202,15 @@ popup.backdrop.addEventListener("click", function(){
 	popup.backdrop.classList.remove("show");
 	popup.content.classList.remove("show");
 });
+
+for(let i = 0; i < founders.links.length; i++){
+	founders.links[i].addEventListener("focus", function (){
+		founders.svgs[i].classList.add("focused");
+	})
+}
+
+for(let i = 0; i < founders.links.length; i++){
+	founders.links[i].addEventListener("blur", function (){
+		founders.svgs[i].classList.remove("focused");
+	})
+}
