@@ -14,11 +14,12 @@
 		height: 4rem;
 		padding-top: 0rem;
 		padding-bottom: 0rem;	
+		padding-left: 0.5rem;
 	}
 	.main-nav{
 		position: static;
 		width: 100%;
-		padding: 0 2rem;
+		padding: 0 1.5rem;
 		padding-right: 0.8rem;
 		justify-content: space-between;
 	}

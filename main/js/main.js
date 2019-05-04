@@ -7,8 +7,14 @@ var navbar = {
 	title: document.querySelector("#nav__title"),
 	menubutton: document.querySelector("#nav__menu"),
 	menuitems: document.querySelector(".nav__items"),
-	menuitem: document.querySelectorAll(".nav__item")
-
+	menuitem: document.querySelectorAll(".nav__item"),
+	showMenu: function showMenu() {
+		navbar.menuitems.classList.add("show")
+	},
+	hideMenu: function hideMenu() {
+		navbar.menuitems.classList.remove("show")
+	},
+	menutouched: false
 }
 
 // Main objects
@@ -47,12 +53,33 @@ var founders = {
 	links: document.querySelectorAll(".founders__logo-link")
 }
 
-function showMenu() {
-	navbar.menuitems.classList.add("show");
-}
 
-navbar.menubutton.addEventListener("click", showMenu);
-navbar.menubutton.addEventListener("touchstart", showMenu);
+navbar.menubutton.addEventListener("touchstart", function () {
+
+	if(!navbar.menuitems.classList.contains("show")) {
+		navbar.showMenu();
+		navbar.menutouched = true;
+	}
+	else if(navbar.menuitems.classList.contains("show")) {
+		navbar.hideMenu();
+		navbar.menutouched = true;	
+
+	}
+});
+navbar.menubutton.addEventListener("click", function () {
+
+	if(navbar.menutouched === false) {
+		if(!navbar.menuitems.classList.contains("show")) {
+			navbar.showMenu();
+		}
+		else if(navbar.menuitems.classList.contains("show")) {
+			navbar.hideMenu();
+		}
+
+	}
+	navbar.menutouched = false;
+});
+
 
 // Get the offset top of the section elements 
 var servicesY = services.title.offsetTop - 48;
@@ -193,6 +220,10 @@ for (let i = 0; i < products.items.length; i++) {
 	});
 }
 
+
+// close the popup and the backdrop upon clicking the close button
+// or clicking the backdrop
+
 popup.close.addEventListener("click", function(){
 	popup.backdrop.classList.remove("show");
 	popup.content.classList.remove("show");
@@ -203,6 +234,7 @@ popup.backdrop.addEventListener("click", function(){
 	popup.content.classList.remove("show");
 });
 
+// Make the founders links have a focused class on focus and have it removed on blur
 for(let i = 0; i < founders.links.length; i++){
 	founders.links[i].addEventListener("focus", function (){
 		founders.svgs[i].classList.add("focused");

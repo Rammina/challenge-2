@@ -440,11 +440,13 @@ ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+    align-items: center;
     width: 100%;
     min-height: 25rem;
-    height: 75rem;
-    padding: 0 1rem;
-    padding-left: 0.2rem;
+    height: 74rem;
+    padding: 0 0.9rem;
+    padding-bottom: 3rem;
+    padding-left: 0.7rem;
     /* border: 1px solid black; */
     text-align: center;
     vertical-align: middle;
@@ -483,6 +485,10 @@ ul {
     order: 7;
 }
 
+#space__panel-5{
+    height: 2%;
+}
+
 #center__panel-5 {
     order: 8;
     height: 2%;
@@ -493,8 +499,10 @@ ul {
     height: 2%;
 }
 
-.about__space {
+.about__space-panel {
     display: none;
+    width: calc(47% - 3rem);
+    height: 24.5%;
 }
 
 /* .about__center {
@@ -510,7 +518,7 @@ ul {
     display: inline-block;
     position: absolute;
     width: 2px;
-    height: 59rem;
+    height: 57rem;
     margin: 0 auto;
     background-color: #c5d3c3;
 }
@@ -539,7 +547,7 @@ ul {
 
 .about__content-panel {
     width: calc(100% - 5rem);
-    height: 22%;
+    height: 24.5%;
     color: rgb(245, 245, 245);
     text-shadow: 1px 1px 0px rgb(109, 107, 89);
     text-align: left;
