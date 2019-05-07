@@ -91,11 +91,11 @@
 		min-width: 0%;
 		height: 33.33%;
 	}
-	.products__logo {
+	.products__outer {
 		height: calc(34vw - 1rem);
 		min-height: 11.125rem;
 	}
-	.products__logo-image {
+	.products__middle {
 		height: calc(34vw - 1rem);
 		min-height: 11.125rem;
 	}
@@ -110,7 +110,7 @@
 		width: 33%;
 		margin: 0;
 	}
-	.founders__logo-image {
+	.founders__middle {
 		width: 12rem;
 		height: 12rem;
 	}
@@ -186,11 +186,13 @@
 
 	.about__container{padding-left: 4rem;padding-right: 4rem;}
 
-	.founders__logo-image {
+	.founders__middle {
 		width: 13rem;
 		height: 13rem;
 	}
-	
+	#first-contact{
+		font-size: 3.1rem;
+	}
 }
 
 @media screen and (min-width: 690px) {
@@ -212,11 +214,11 @@
 
 		
 	}
-	.products__logo {
+	.products__outer {
 		height: calc(20.5vw);
 		min-height: 9.5rem;
 	}
-	.products__logo-image {
+	.products__middle {
 		height: calc(20.5vw);
 		min-height: 9.5rem;
 
@@ -267,7 +269,7 @@
 		height: 33rem;
 	}
 
-	.founders__logo-image {
+	.founders__middle {
 		width: 14rem;
 		height: 14rem;
 	}

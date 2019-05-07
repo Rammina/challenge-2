@@ -53,6 +53,16 @@ var founders = {
 	links: document.querySelectorAll(".founders__logo-link")
 }
 
+// contact objects
+
+var contact = {
+
+	emailInput: document.querySelector(".contact__text-input"),
+	emailInputText: document.querySelector(".contact__text-input").value,
+	emailClick: false,
+	signUp: document.querySelector("#contact-submit"),
+	signUpValid: false
+}
 
 navbar.menubutton.addEventListener("touchstart", function () {
 
@@ -66,6 +76,7 @@ navbar.menubutton.addEventListener("touchstart", function () {
 
 	}
 });
+
 navbar.menubutton.addEventListener("click", function () {
 
 	if(navbar.menutouched === false) {
@@ -91,7 +102,7 @@ window.onresize = function (event) {
 	servicesY = services.title.offsetTop - 48;
 	productsY = products.title.offsetTop - 48;
 
-	console.log(servicesY);
+	// console.log(servicesY);
 };
 
 // This checks how much the window is scrolled
@@ -246,3 +257,57 @@ for(let i = 0; i < founders.links.length; i++){
 		founders.svgs[i].classList.remove("focused");
 	})
 }
+
+// Functions that get rid of placeholders
+// The first one restores the placeholder if the default value is not changed
+function fillField(input,val) {
+      if(input.value === "")
+         input.value=val;
+};
+
+// The second one removes the placeholder when the input box is on focus
+function clearField(input,val) {
+      if(input.value === val)
+         input.value="";
+};
+
+function validateSignUp() {
+
+	if (contact.emailInput.value === "Enter your email...") {
+		contact.emailInput.classList.add("default");
+		contact.signUp.classList.add("deny");
+		contact.emailInput.classList.remove("invalid");
+		contact.emailInput.classList.remove("valid");
+	}
+	else {
+		if (contact.emailInput.matches(':invalid')) {
+			contact.signUp.classList.add("deny");
+			contact.emailInput.classList.add("invalid");
+			contact.emailInput.classList.remove("valid");
+			contact.emailInput.classList.remove("default");
+			console.log("invalid check");
+	}
+		else if (contact.emailInput.matches(':valid')) {
+			contact.signUp.classList.remove("deny");
+			contact.emailInput.classList.add("valid");
+			contact.emailInput.classList.remove("invalid");
+			contact.emailInput.classList.remove("default");
+			console.log("valid check");
+		}
+	}
+
+}
+
+validateSignUp();
+
+contact.emailInput.addEventListener("focus", function(){
+	validateSignUp();
+});
+
+contact.emailInput.addEventListener("blur", function(){
+	validateSignUp();
+});
+
+contact.signUp.addEventListener("mouseover", function(){
+	validateSignUp();
+});
