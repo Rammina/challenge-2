@@ -166,8 +166,8 @@ li {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    min-height: 3.75rem;
-    background-color: white;
+    background-color: rgb(36, 36, 36);
+    /*height: 17rem;*/
     padding-top: 2rem;
     padding-bottom: 2rem;
 }
@@ -177,7 +177,6 @@ li {
     padding: 0;
     text-align: center;
     margin: 0 auto;
-    min-width: 50%;
     width: 100%;
 }
 
@@ -187,7 +186,7 @@ li {
     padding: 0;
     text-align: center;
     margin: 0 auto;
-    min-width: 50%;
+    margin-top: 1rem;
     width: 100%;
 }
 
@@ -200,7 +199,7 @@ li {
 
 .footer__link a {
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 .footer__link a:focus {
@@ -208,14 +207,25 @@ li {
 }
 
 .footer__text p {
+    font-size: 1rem;
+    opacity: 0.9;
     text-align: center;
-    margin-top: 0.5rem;
-    color: rgba(0, 0, 0, 0.8);
+    margin-top: 0rem;
+    color: white;
 }
+
+#copyright{
+    order: 0;
+}
+
+#links{
+    order: 2;
+}
+
+
 
 .footer__logos-container {
     order: 1;
-    min-width: 50%;
     width: 100%;
     text-align: center;
 }
@@ -234,16 +244,16 @@ li {
     display: inline-block;
     text-align: center;
     text-decoration: none;
-    margin: 0 5%;
-    width: 2rem;
-    height: 2rem;
+    margin: 0 3%;
+    width: 3rem;
+    height: 3rem;
 }
 
 .footer__logo-link {
     display: inline-block;
     border: none;
     padding: 0;
-    height: 2rem;
+    height: 3rem;
 }
 
 .footer__logo-link:focus {
@@ -252,21 +262,22 @@ li {
 
 .footer__logo svg {
     vertical-align: middle;
-    width: 2rem;
-    height: 2rem;
-    /* filter: invert(7%) sepia(63%) saturate(2819%) hue-rotate(317deg) brightness(85%) contrast(98%); */
+    width: 3rem;
+    height: 3rem;
+    filter: invert(89%) sepia(63%) saturate(5297%) hue-rotate(179deg) brightness(123%) contrast(100%);
 }
 
 .footer__logo svg:hover {
-    width: 2rem;
-    height: 2rem;
-    /* filter: brightness(40%); */
-    opacity: 0.7;
+    filter: invert(84%) sepia(34%) saturate(581%) hue-rotate(346deg) brightness(106%) contrast(104%);
+}
+
+.footer__logo__svg.focused {
+   filter: invert(84%) sepia(34%) saturate(581%) hue-rotate(346deg) brightness(106%) contrast(104%); 
 }
 
 .footer__logo image {
-    width: 2rem;
-    height: 2rem;
+    width: 3rem;
+    height: 3rem;
 }
 
         
