@@ -307,9 +307,18 @@
 	.shopping__text h1 {
 		font-size: 3.7rem;
 	}
-	
-
-	
+	.contact__field-1 {
+		width: 50%;
+		height: 15rem;
+	}
+	.contact__field-2 {
+		width: 50%;
+		height: 15rem;
+	}
+	.contact__text-input {
+		height: 3.65rem;
+		min-width: 20rem;
+	}
 }
 
 @media screen and (min-width: 900px) {

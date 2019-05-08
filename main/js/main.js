@@ -46,8 +46,14 @@ var founders = {
 // contact section
 var contact = {
 	container: document.querySelector(".contact-container"),
-	emailInput: document.querySelector(".contact__text-input"),
-	emailInputText: document.querySelector(".contact__text-input").value,
+	nameInput: document.querySelector("#contact__name"),
+	nameInputText: document.querySelector("#contact__name").value,
+	emailInput: document.querySelector("#contact__email"),
+	emailInputText: document.querySelector("#contact__email").value,
+	phoneInput: document.querySelector("#contact__phone"),
+	phoneInputText: document.querySelector("#contact__phone").value,
+	messageInput: document.querySelector("#contact__message"),
+	messageInputText: document.querySelector("#contact__message").value,
 	emailClick: false,
 	signUp: document.querySelector("#contact-submit"),
 	signUpValid: false
@@ -318,7 +324,7 @@ function clearField(input,val) {
 
 function validateSignUp() {
 
-	if (contact.emailInput.value === "Enter your email...") {
+	if (contact.emailInput.value === "Your Email...") {
 		contact.emailInput.classList.add("default");
 		contact.signUp.classList.add("deny");
 		contact.emailInput.classList.remove("invalid");
