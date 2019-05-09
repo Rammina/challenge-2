@@ -307,17 +307,34 @@
 	.shopping__text h1 {
 		font-size: 3.7rem;
 	}
+	.contact-container{
+		height: 47rem;
+	}
+	.contact__form-container{
+		margin: 4rem 0;
+	}
+	.contact__flex{
+		justify-content: center;
+	}
 	.contact__field-1 {
 		width: 50%;
+		max-width: 40rem;
+		margin-right: 0; 
 		height: 15rem;
 	}
 	.contact__field-2 {
 		width: 50%;
+		max-width: 40rem;
+		margin-left: 0; 
 		height: 15rem;
 	}
 	.contact__text-input {
 		height: 3.65rem;
 		min-width: 20rem;
+		margin-right: 1.1rem;
+	}
+	#contact__message{
+		margin-left: 1.1rem;
 	}
 }
 

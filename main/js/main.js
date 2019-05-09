@@ -108,21 +108,23 @@ navbar.menubutton.addEventListener("click", function () {
 });
 
 
-// Get the offset top of the section elements 
-var servicesY = services.title.offsetTop - 60;
-var productsY = products.title.offsetTop - 60;
-var aboutY = about.title.offsetTop - 60;
-var foundersY = founders.title.offsetTop - 60;
-var contactY = contact.container.offsetTop - 120;
-
+// Get the offset top of the section elements
+var offset = { 
+	
+servicesY: services.title.offsetTop - 60,
+productsY: products.title.offsetTop - 60,
+aboutY: about.title.offsetTop - 60,
+foundersY: founders.title.offsetTop - 60,
+contactY: contact.container.offsetTop - 120
+ }; 
 // Re-updates the offset upon resizing
 window.onresize = function (event) {
 
-	servicesY = services.title.offsetTop - 60;
-	productsY = products.title.offsetTop - 60;
-	aboutY = about.title.offsetTop - 60;
-	foundersY = founders.title.offsetTop - 60;
-	contactY = contact.container.offsetTop - 120;
+	offset.servicesY = services.title.offsetTop - 60;
+	offset.productsY = products.title.offsetTop - 60;
+	offset.aboutY = about.title.offsetTop - 60;
+	offset.foundersY = founders.title.offsetTop - 60;
+	offset.contactY = contact.container.offsetTop - 120;
 	// console.log(servicesY);
 };
 
@@ -148,14 +150,14 @@ window.onscroll = function (event)
 	// console.log(servicesY);
 
 	// unhighlight services after scrolling above its position
-	if(this.scrollY < servicesY) {
+	if(this.scrollY < offset.servicesY) {
 		for(let index = 0; index < navbar.menuitem.length; index++) {
 			navbar.menuitem[index].classList.remove("current");
 		}
 
 	}
 	// Highlight services after scrolling down to its position
-	else if(this.scrollY > servicesY && this.scrollY < productsY) {
+	else if(this.scrollY > offset.servicesY && this.scrollY < offset.productsY) {
 		for(let index = 0; index < navbar.menuitem.length; index++) {
 			if(index !== 0) {
 				navbar.menuitem[index].classList.remove("current");
@@ -167,7 +169,7 @@ window.onscroll = function (event)
 
 	}
 	// Highlight products after scrolling down to its position
-	else if(this.scrollY > productsY && this.scrollY < aboutY) {
+	else if(this.scrollY > offset.productsY && this.scrollY < offset.aboutY) {
 		for(let index = 0; index < navbar.menuitem.length; index++) {
 			if(index !== 1){
 
@@ -179,7 +181,7 @@ window.onscroll = function (event)
 	}
 
 	// Highlight about after scrolling down to its position
-	else if(this.scrollY > aboutY && this.scrollY < foundersY) {
+	else if(this.scrollY > offset.aboutY && this.scrollY < offset.foundersY) {
 		for(let index = 0; index < navbar.menuitem.length; index++) {
 			if(index !== 2) {
 				navbar.menuitem[index].classList.remove("current");
@@ -189,7 +191,7 @@ window.onscroll = function (event)
 	}
 
 	// Highlight founders after scrolling down to its position
-	else if(this.scrollY > foundersY && this.scrollY < contactY) {
+	else if(this.scrollY > offset.foundersY && this.scrollY < offset.contactY) {
 		for(let index = 0; index < navbar.menuitem.length; index++) {
 			if(index !== 3) {
 				navbar.menuitem[index].classList.remove("current");
@@ -199,7 +201,7 @@ window.onscroll = function (event)
 	}
 
 	// Highlight contact after scrolling down to its position
-	else if(this.scrollY > contactY) {
+	else if(this.scrollY > offset.contactY) {
 		for(let index = 0; index < navbar.menuitem.length; index++) {
 			if(index !== 4){
 
