@@ -115,7 +115,7 @@ servicesY: services.title.offsetTop - 60,
 productsY: products.title.offsetTop - 60,
 aboutY: about.title.offsetTop - 60,
 foundersY: founders.title.offsetTop - 60,
-contactY: contact.container.offsetTop - 120
+contactY: contact.container.offsetTop - 200
  }; 
 // Re-updates the offset upon resizing
 window.onresize = function (event) {
@@ -124,7 +124,7 @@ window.onresize = function (event) {
 	offset.productsY = products.title.offsetTop - 60;
 	offset.aboutY = about.title.offsetTop - 60;
 	offset.foundersY = founders.title.offsetTop - 60;
-	offset.contactY = contact.container.offsetTop - 120;
+	offset.contactY = contact.container.offsetTop - 200;
 	// console.log(servicesY);
 };
 
