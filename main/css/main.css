@@ -836,11 +836,12 @@ ul {
 
 .contact__text-input.default {
     background-color: rgb(240, 240, 240);
-    color: rgba(15, 15, 15, 0.7);
+    color: rgba(15, 15, 15, 0.6);
 }
 
 .contact__text-input.valid {
-    background-color: rgb(96, 187, 96);
+    /*background-color: rgb(96, 187, 96);*/
+    background-color: rgb(209, 247, 205);
     border: 1.5px solid green;
 }
 

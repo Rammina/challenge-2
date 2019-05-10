@@ -326,6 +326,14 @@ function clearField(input,val) {
 
 function validateSignUp() {
 
+
+	if(contact.nameInput.value === "Your Name...") {
+		contact.nameInput.classList.add("default");
+	}
+	else{
+		contact.nameInput.classList.remove("default");
+	}
+
 	if (contact.emailInput.value === "Your Email...") {
 		contact.emailInput.classList.add("default");
 		contact.signUp.classList.add("deny");
@@ -338,29 +346,85 @@ function validateSignUp() {
 			contact.emailInput.classList.add("invalid");
 			contact.emailInput.classList.remove("valid");
 			contact.emailInput.classList.remove("default");
-			console.log("invalid check");
-	}
-		else if (contact.emailInput.matches(':valid')) {
+			// console.log("invalid check");
+		}
+		else if ((contact.emailInput.matches(':valid')) && contact.emailInput.value !== "") {
 			contact.signUp.classList.remove("deny");
 			contact.emailInput.classList.add("valid");
 			contact.emailInput.classList.remove("invalid");
 			contact.emailInput.classList.remove("default");
-			console.log("valid check");
+			
+			// console.log("valid check");
+		}
+
+		if(contact.emailInput.value === "") {
+			contact.emailInput.classList.remove("default");
 		}
 	}
+
+	if(contact.phoneInput.value === "Your Phone Number...") {
+		contact.phoneInput.classList.add("default");
+	}
+	else{
+		contact.phoneInput.classList.remove("default");
+	}
+
+	if(contact.messageInput.value === "Your Message...") {
+		contact.messageInput.classList.add("default");
+	}
+	else{
+		contact.messageInput.classList.remove("default");
+	}
+
+	// Checked all fields are valid
+	if((contact.nameInput.value === "" || contact.nameInput.value === "Your Name...") || (contact.emailInput.value === "Your Email..." || contact.emailInput.matches(":invalid")) || (contact.phoneInput.value === "" || contact.phoneInput.value === "Your Phone Number..." ) || (contact.messageInput.value === "" || contact.messageInput.value === "Your Message...")) {
+		contact.signUp.classList.add("deny");
+
+	}
+	else{
+		contact.signUp.classList.remove("deny");
+	}
+
 
 }
 
 validateSignUp();
 
-contact.emailInput.addEventListener("focus", function(){
+
+contact.nameInput.addEventListener("focus", function(){
+	validateSignUp();
+});
+contact.nameInput.addEventListener("blur", function(){
 	validateSignUp();
 });
 
+
+contact.emailInput.addEventListener("focus", function(){
+	validateSignUp();
+});
 contact.emailInput.addEventListener("blur", function(){
 	validateSignUp();
 });
 
+
+contact.phoneInput.addEventListener("focus", function(){
+	validateSignUp();
+});
+contact.phoneInput.addEventListener("blur", function(){
+	validateSignUp();
+});
+
+
+contact.messageInput.addEventListener("focus", function(){
+	validateSignUp();
+});
+contact.messageInput.addEventListener("blur", function(){
+	validateSignUp();
+});
+
+
 contact.signUp.addEventListener("mouseover", function(){
 	validateSignUp();
 });
+
+
