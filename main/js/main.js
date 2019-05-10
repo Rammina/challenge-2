@@ -64,7 +64,7 @@ var contact = {
 var popup = {
 	
 	backdrop: document.querySelector(".backdrop"),
-	content: document.querySelector(".popup"),
+	content: document.querySelector(".popup__container"),
 	close: document.querySelector(".popup__close"),
 	items: document.querySelectorAll(".popup__content-container"),
 
