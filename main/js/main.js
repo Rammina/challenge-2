@@ -324,14 +324,46 @@ function clearField(input,val) {
          input.value="";
 };
 
+function validNameField(string) {
+	let regex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+
+	let notValid = regex.test(string);
+	if(notValid) {
+		return false;
+	}
+	if(string.length > 100) {
+		return false;
+
+	}
+	return true;
+	
+}
+
+function validPhoneNumber(string) {
+	return ((string.match(/\d/g)) && (string.length <= 15 && string.length >= 4));
+
+}
+
 function validateSignUp() {
 
 
-	if(contact.nameInput.value === "Your Name...") {
+	if((contact.nameInput.value === "Your Name...") || (contact.nameInput.value === ""))  {
 		contact.nameInput.classList.add("default");
+		contact.nameInput.classList.remove("valid");
+		contact.nameInput.classList.remove("invalid");
 	}
 	else{
 		contact.nameInput.classList.remove("default");
+	
+
+		if((!validNameField(contact.nameInput.value)) && (contact.nameInput.value !== ""))  {
+			contact.nameInput.classList.add("invalid");
+			contact.nameInput.classList.remove("valid");
+		}
+		else if((validNameField(contact.nameInput.value)) && (contact.nameInput.value !== ""))  {
+			contact.nameInput.classList.add("valid");
+			contact.nameInput.classList.remove("invalid");
+		}
 	}
 
 	if (contact.emailInput.value === "Your Email...") {
@@ -362,11 +394,23 @@ function validateSignUp() {
 		}
 	}
 
-	if(contact.phoneInput.value === "Your Phone Number...") {
+	if((contact.phoneInput.value === "Your Phone Number...") || (contact.phoneInput.value === ""))  {
 		contact.phoneInput.classList.add("default");
+		contact.phoneInput.classList.remove("invalid");
+		contact.phoneInput.classList.remove("valid");
 	}
 	else{
 		contact.phoneInput.classList.remove("default");
+
+		if((!validPhoneNumber(contact.phoneInput.value)) && (contact.phoneInput.value !== ""))  {
+			contact.phoneInput.classList.add("invalid");
+			contact.phoneInput.classList.remove("valid");	
+		}
+		else if((validPhoneNumber(contact.phoneInput.value)) && (contact.phoneInput.value !== ""))  {
+			contact.phoneInput.classList.add("valid");
+			contact.phoneInput.classList.remove("invalid");
+		}
+
 	}
 
 	if(contact.messageInput.value === "Your Message...") {
@@ -377,7 +421,7 @@ function validateSignUp() {
 	}
 
 	// Checked all fields are valid
-	if((contact.nameInput.value === "" || contact.nameInput.value === "Your Name...") || (contact.emailInput.value === "Your Email..." || contact.emailInput.matches(":invalid")) || (contact.phoneInput.value === "" || contact.phoneInput.value === "Your Phone Number..." ) || (contact.messageInput.value === "" || contact.messageInput.value === "Your Message...")) {
+	if((contact.nameInput.classList.contains("default") || contact.nameInput.classList.contains("invalid")) || (contact.emailInput.value === "Your Email..." || contact.emailInput.matches(":invalid")) || (contact.phoneInput.value === "" || contact.phoneInput.value === "Your Phone Number..." ) || (contact.messageInput.value === "" || contact.messageInput.value === "Your Message...")) {
 		contact.signUp.classList.add("deny");
 
 	}
@@ -393,6 +437,7 @@ validateSignUp();
 
 contact.nameInput.addEventListener("focus", function(){
 	validateSignUp();
+	contact.nameInput.classList.remove("default");
 });
 contact.nameInput.addEventListener("blur", function(){
 	validateSignUp();
@@ -401,6 +446,7 @@ contact.nameInput.addEventListener("blur", function(){
 
 contact.emailInput.addEventListener("focus", function(){
 	validateSignUp();
+	contact.emailInput.classList.remove("default");
 });
 contact.emailInput.addEventListener("blur", function(){
 	validateSignUp();
@@ -409,6 +455,7 @@ contact.emailInput.addEventListener("blur", function(){
 
 contact.phoneInput.addEventListener("focus", function(){
 	validateSignUp();
+	contact.phoneInput.classList.remove("default");
 });
 contact.phoneInput.addEventListener("blur", function(){
 	validateSignUp();
@@ -417,6 +464,7 @@ contact.phoneInput.addEventListener("blur", function(){
 
 contact.messageInput.addEventListener("focus", function(){
 	validateSignUp();
+	contact.messageInput.classList.remove("default");
 });
 contact.messageInput.addEventListener("blur", function(){
 	validateSignUp();
