@@ -340,7 +340,9 @@ function validNameField(string) {
 }
 
 function validPhoneNumber(string) {
-	return ((string.match(/\d/g)) && (string.length <= 15 && string.length >= 4));
+	let digits = string.match(/\d/g);
+
+	return ((digits) && (digits.length <= 15 && digits.length >= 4));
 
 }
 
