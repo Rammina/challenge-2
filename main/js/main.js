@@ -54,6 +54,10 @@ var contact = {
 	phoneInputText: document.querySelector("#contact__phone").value,
 	messageInput: document.querySelector("#contact__message"),
 	messageInputText: document.querySelector("#contact__message").value,
+	nameError: document.querySelector("#name-error"),
+	emailError: document.querySelector("#email-error"),
+	phoneError: document.querySelector("#phone-error"),
+	messageError: document.querySelector("#message-error"),
 	emailClick: false,
 	signUp: document.querySelector("#contact-submit"),
 	signUpValid: false
@@ -220,6 +224,7 @@ for (let i = 0; i < products.items.length; i++) {
 	products.items[i].addEventListener("click", function() {
 		popup.backdrop.classList.add("show");
 		popup.content.classList.add("show");
+		document.body.classList.add("hidden-overflow");
 
 		if (i == 0) {
 			for(let i = 0; i < popup.items.length; i++) {
@@ -291,11 +296,13 @@ for (let i = 0; i < products.items.length; i++) {
 popup.close.addEventListener("click", function(){
 	popup.backdrop.classList.remove("show");
 	popup.content.classList.remove("show");
+	document.body.classList.remove("hidden-overflow");
 });
 
 popup.backdrop.addEventListener("click", function(){
 	popup.backdrop.classList.remove("show");
 	popup.content.classList.remove("show");
+	document.body.classList.remove("hidden-overflow");
 });
 
 // Make the founders links have a focused class on focus and have it removed on blur
@@ -346,6 +353,10 @@ function validPhoneNumber(string) {
 
 }
 
+function validMessage(string) {
+	return (string.length <= 500);
+}
+
 function validateSignUp() {
 
 
@@ -353,6 +364,7 @@ function validateSignUp() {
 		contact.nameInput.classList.add("default");
 		contact.nameInput.classList.remove("valid");
 		contact.nameInput.classList.remove("invalid");
+		contact.nameError.classList.remove("show");
 	}
 	else{
 		contact.nameInput.classList.remove("default");
@@ -360,11 +372,13 @@ function validateSignUp() {
 
 		if((!validNameField(contact.nameInput.value)) && (contact.nameInput.value !== ""))  {
 			contact.nameInput.classList.add("invalid");
+			contact.nameError.classList.add("show");
 			contact.nameInput.classList.remove("valid");
 		}
 		else if((validNameField(contact.nameInput.value)) && (contact.nameInput.value !== ""))  {
 			contact.nameInput.classList.add("valid");
 			contact.nameInput.classList.remove("invalid");
+			contact.nameError.classList.remove("show");
 		}
 	}
 
@@ -372,12 +386,14 @@ function validateSignUp() {
 		contact.emailInput.classList.add("default");
 		contact.signUp.classList.add("deny");
 		contact.emailInput.classList.remove("invalid");
+		contact.emailError.classList.remove("show");
 		contact.emailInput.classList.remove("valid");
 	}
 	else {
 		if (contact.emailInput.matches(':invalid')) {
 			contact.signUp.classList.add("deny");
 			contact.emailInput.classList.add("invalid");
+			contact.emailError.classList.add("show");
 			contact.emailInput.classList.remove("valid");
 			contact.emailInput.classList.remove("default");
 			// console.log("invalid check");
@@ -386,6 +402,7 @@ function validateSignUp() {
 			contact.signUp.classList.remove("deny");
 			contact.emailInput.classList.add("valid");
 			contact.emailInput.classList.remove("invalid");
+			contact.emailError.classList.remove("show");
 			contact.emailInput.classList.remove("default");
 			
 			// console.log("valid check");
@@ -399,6 +416,7 @@ function validateSignUp() {
 	if((contact.phoneInput.value === "Your Phone Number...") || (contact.phoneInput.value === ""))  {
 		contact.phoneInput.classList.add("default");
 		contact.phoneInput.classList.remove("invalid");
+		contact.phoneError.classList.remove("show");
 		contact.phoneInput.classList.remove("valid");
 	}
 	else{
@@ -407,19 +425,35 @@ function validateSignUp() {
 		if((!validPhoneNumber(contact.phoneInput.value)) && (contact.phoneInput.value !== ""))  {
 			contact.phoneInput.classList.add("invalid");
 			contact.phoneInput.classList.remove("valid");	
+			contact.phoneError.classList.add("show");
 		}
 		else if((validPhoneNumber(contact.phoneInput.value)) && (contact.phoneInput.value !== ""))  {
 			contact.phoneInput.classList.add("valid");
 			contact.phoneInput.classList.remove("invalid");
+			contact.phoneError.classList.remove("show");
 		}
 
 	}
 
-	if(contact.messageInput.value === "Your Message...") {
+	if((contact.messageInput.value === "Your Message...") || (contact.messageInput === "")) {
 		contact.messageInput.classList.add("default");
+		contact.messageInput.classList.remove("invalid");
+		contact.messageError.classList.remove("show");
+		contact.messageInput.classList.remove("valid");
 	}
 	else{
 		contact.messageInput.classList.remove("default");
+
+		if((!validMessage(contact.messageInput.value)) && (contact.messageInput.value !== ""))  {
+			contact.messageInput.classList.add("invalid");
+			contact.messageInput.classList.remove("valid");
+			contact.messageError.classList.add("show");
+		}
+		else if((validMessage(contact.messageInput.value)) && (contact.messageInput.value !== ""))  {
+			contact.messageInput.classList.add("valid");
+			contact.messageInput.classList.remove("invalid");
+			contact.messageError.classList.remove("show");
+		}
 	}
 
 	// Checked all fields are valid

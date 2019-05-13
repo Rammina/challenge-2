@@ -508,11 +508,15 @@
                               <div class="contact__flex">
                                 <div class="contact__field-1">
                                   <input class="contact__text-input default" id="contact__name" type="text" placeholder="Your Name..." onblur="fillField(this,'Your Name...');" onfocus="clearField(this,'Your Name...');"/>
+                                  <div class="form__error-message" id="name-error">Please input a valid name.</div>
                                   <input class="contact__text-input default" id="contact__email" type="email" placeholder="Your Email..." value="Your Email..." onblur="fillField(this,'Your Email...');" onfocus="clearField(this,'Your Email...');"/>
+                                  <div class="form__error-message" id="email-error">Please input a valid email address.</div>
                                   <input class="contact__text-input default" id="contact__phone" type="text" placeholder="Your Phone Number..." onblur="fillField(this,'Your Phone Number...');" onfocus="clearField(this,'Your Phone Number...');"/>
+                                  <div class="form__error-message" id="phone-error">Please input a valid phone number.</div>
                                 </div>
                                 <div class="contact__field-2">
                                     <textarea class="contact__text-input default" id="contact__message" type="text" placeholder="Your Message..." onblur="fillField(this,'Your Message...');" onfocus="clearField(this,'Your Message...');"></textarea>
+                                    <div class="form__error-message" id="message-error">We would appreciate it if you had something to say!</div>
                                 </div>
                               </div>
                                     

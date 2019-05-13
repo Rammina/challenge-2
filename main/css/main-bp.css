@@ -382,7 +382,7 @@
 		font-size: 3.7rem;
 	}
 	.contact-container{
-		height: 47rem;
+		height: 52rem;
 		background: url(../images/contact-bg.jpg);
 		background-size: cover;
 		background-position: 50%;
@@ -392,6 +392,7 @@
 	}
 	.contact__flex{
 		justify-content: center;
+		margin-top: 4rem;
 	}
 	.contact__field-1 {
 		width: 50%;
@@ -410,8 +411,17 @@
 		min-width: 20rem;
 		margin-right: 1.1rem;
 	}
+	.form__error-message{
+		margin-right: 1.1rem;
+	}
+	#message-error{
+		margin-left: 1.1rem;
+	}
 	#contact__message{
 		margin-left: 1.1rem;
+	}
+	#contact-submit{
+		margin-top: 8rem;
 	}
 }
 
