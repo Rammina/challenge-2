@@ -435,7 +435,7 @@ function validateSignUp() {
 
 	}
 
-	if((contact.messageInput.value === "Your Message...") || (contact.messageInput === "")) {
+	if((contact.messageInput.value === "Your Message... (500 character limit)") || (contact.messageInput === "")) {
 		contact.messageInput.classList.add("default");
 		contact.messageInput.classList.remove("invalid");
 		contact.messageError.classList.remove("show");
@@ -457,7 +457,7 @@ function validateSignUp() {
 	}
 
 	// Checked all fields are valid
-	if((contact.nameInput.classList.contains("default") || contact.nameInput.classList.contains("invalid")) || (contact.emailInput.value === "Your Email..." || contact.emailInput.matches(":invalid")) || (contact.phoneInput.value === "" || contact.phoneInput.value === "Your Phone Number..." ) || (contact.messageInput.value === "" || contact.messageInput.value === "Your Message...")) {
+	if((contact.nameInput.classList.contains("default") || contact.nameInput.classList.contains("invalid")) || (contact.emailInput.value === "Your Email..." || contact.emailInput.matches(":invalid")) || (contact.phoneInput.value === "" || contact.phoneInput.value === "Your Phone Number..." ) || (contact.messageInput.value === "" || contact.messageInput.value === "Your Message... (500 character limit)")) {
 		contact.signUp.classList.add("deny");
 
 	}
