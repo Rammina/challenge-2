@@ -60,7 +60,43 @@ var contact = {
 	messageError: document.querySelector("#message-error"),
 	emailClick: false,
 	signUp: document.querySelector("#contact-submit"),
-	signUpValid: false
+	signUpValid: false,
+	fillField: function fillField(input, val) {
+		if(input.value === ""){
+				input.value = val;
+			
+		}
+	},
+	clearField: function clearField(input, val) {
+		if(input.value === val){
+			input.value = "";
+		}
+	},
+	validNameField: function validNameField(string) {
+		let regex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+		let notValid = regex.test(string);
+		if(notValid) {
+			return false;
+		}
+		if(string.length > 100) {
+			return false;
+		}
+		return true;
+	},
+	validPhoneNumber: function validPhoneNumber(string) {
+		let digits = string.match(/\d/g);
+		return ((digits) && (digits.length <= 15 && digits.length >= 4));
+	},
+	validMessage: function validMessage(string) {
+		return (string.length <= 500);
+	}
+	// validateName
+	// validateEmail
+	// validatePhoneNumber
+	// validateMessage
+	// validateSignUp
+
+
 }
 
 
@@ -321,14 +357,16 @@ for(let i = 0; i < founders.links.length; i++){
 // Functions that get rid of placeholders
 // The first one restores the placeholder if the default value is not changed
 function fillField(input,val) {
-      if(input.value === "")
-         input.value=val;
+      if(input.value === ""){
+         input.value = val;
+      }
 };
 
 // The second one removes the placeholder when the input box is on focus
 function clearField(input,val) {
-      if(input.value === val)
-         input.value="";
+      if(input.value === val){
+         input.value = "";
+      }
 };
 
 function validNameField(string) {

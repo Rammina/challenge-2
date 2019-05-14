@@ -126,7 +126,7 @@
 
     </header>
     <main class="main-content">
-        <div class="shopping-container">
+        <section class="shopping-container">
             <div class="shopping__content">
                     <div class="shopping__space">
 
@@ -141,12 +141,12 @@
                             </div>
                     </div>
             </div>
-        </div>
+        </section>
         <div class="section__title-container" id="services">
                 <h2 class="section__title"><a name="services">Services</a></h2>
                 <p class="section__subtitle"><span class="forced-line-break-4">Working to ensure that </span> you are comfy outdoors!</p>
         </div>
-        <div class="services__container">
+        <section class="services__container">
             <div class="services__item">
             	<div class="services__logo">
                    <div class="services__logo-image">
@@ -189,12 +189,12 @@
                     <p>Addressing your concerns around the clock!</p>
             	</div>
             </div>
-        </div>
+        </section>
         <div class="section__title-container" id="products">
                 <h2 class="section__title"><a name="products">Products</a></h2>
                 <p class="section__subtitle"><span class="forced-line-break-4">Our equipment is </span> comfortable for everyone!</p>
         </div>
-        <div class="products__container">
+        <section class="products__container">
             <div class="products__item">
             	<div class="products__outer">
                    <div class="products__middle">
@@ -214,7 +214,7 @@
                     <p></p>
             	</div>
             </div>
-        <div class="products__item">
+            <div class="products__item">
             	<div class="products__outer">
                     <div class="products__middle">
                         <div class="products__overlay">
@@ -309,12 +309,12 @@
                     <p></p>
             	</div>
             </div>
-        </div>
+        </section>
         <div class="section__title-container" id="about">
             <h2 class="section__title"><a name="about">About</a></h2>
             <p class="section__subtitle"><span class="forced-line-break-4">The destination </span> <span class="forced-line-break-4">may be comfy, </span> but the journey is not...</p>
         </div>
-        <div class="about__container">
+        <section class="about__container">
             <div class="about__space-panel" id="space__panel-1"></div>
             <div class="about__space-panel" id="space__panel-2"></div>
             <div class="about__space-panel" id="space__panel-3"></div>
@@ -373,12 +373,12 @@
               <div class="about__content-panel" id="content__panel-5">
                   
               </div>
-        </div>
+        </section>
         <div class="section__title-container" id="founders">
           <h2 class="section__title"><a name="founders">Founders</a></h2>
           <p class="section__subtitle"><span class="forced-line-break-5">Three avid campers </span> <span class="forced-line-break-5"> making everyone else's </span> outdoor experiences comfy!</p>
         </div>
-        <div class="founders__container">
+        <section class="founders__container">
             <div class="founders__item">
             	<div class="founders__outer">
                    <div class="founders__middle">
@@ -496,17 +496,17 @@
                 </ul>
               </div>
             </div>
-        </div>
-        <div class="contact-container">
+        </section>
+        <section class="contact-container">
 
             <div class="contact__content">
 
                     <div class="contact__form-container">
                             <div class="contact__text">
                               <h2 id="first-contact"><a name="contact">Contact Us</a></h2>
-                              <div class="contact__flex">
+                              <form class="contact__flex">
                                 <div class="contact__field-1">
-                                  <input class="contact__text-input default" id="contact__name" type="text" placeholder="Your Name..." onblur="fillField(this,'Your Name...');" onfocus="clearField(this,'Your Name...');"/>
+                                  <input class="contact__text-input default" id="contact__name" type="text" role="name text field" placeholder="Your Name..." onblur="fillField(this,'Your Name...');" onfocus="clearField(this,'Your Name...');"/>
                                   <div class="form__error-message" id="name-error">Please input a valid name.</div>
                                   <input class="contact__text-input default" id="contact__email" type="email" placeholder="Your Email..." value="Your Email..." onblur="fillField(this,'Your Email...');" onfocus="clearField(this,'Your Email...');"/>
                                   <div class="form__error-message" id="email-error">Please input a valid email address.</div>
@@ -517,14 +517,14 @@
                                     <textarea class="contact__text-input default" id="contact__message" type="text" placeholder="Your Message... (500 character limit)" onblur="fillField(this,'Your Message... (500 character limit)');" onfocus="clearField(this,'Your Message... (500 character limit)');"></textarea>
                                     <div class="form__error-message" id="message-error">500 character limit reached.</div>
                                 </div>
-                              </div>
+                              </form>
                                     
                                     
                               <input id="contact-submit" type="submit" value="Send Message">
                             </div>
                     </div>
             </div>
-        </div>
+        </section>
     </main>
     
     <footer class="main__footer">
