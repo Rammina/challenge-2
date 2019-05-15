@@ -61,6 +61,7 @@ var contact = {
 	emailClick: false,
 	signUp: document.querySelector("#contact-submit"),
 	signUpValid: false,
+	// functions
 	fillField: function fillField(input, val) {
 		if(input.value === ""){
 				input.value = val;
@@ -89,11 +90,127 @@ var contact = {
 	},
 	validMessage: function validMessage(string) {
 		return (string.length <= 500);
-	}
+	},
 	// validateName
+	validateName: function validateName() {
+
+		if((contact.nameInput.value === "Your Name...") || (contact.nameInput.value === ""))  {
+			contact.nameInput.classList.add("default");
+			contact.nameInput.classList.remove("valid");
+			contact.nameInput.classList.remove("invalid");
+			contact.nameError.classList.remove("show");
+		}
+		else{
+			contact.nameInput.classList.remove("default");
+		
+
+			if((!contact.validNameField(contact.nameInput.value)) && (contact.nameInput.value !== ""))  {
+				contact.nameInput.classList.add("invalid");
+				contact.nameError.classList.add("show");
+				contact.nameInput.classList.remove("valid");
+			}
+			else if((contact.validNameField(contact.nameInput.value)) && (contact.nameInput.value !== ""))  {
+				contact.nameInput.classList.add("valid");
+				contact.nameInput.classList.remove("invalid");
+				contact.nameError.classList.remove("show");
+			}
+		}
+	},
 	// validateEmail
+	validateEmail: function validateEmail() {
+		if (contact.emailInput.value === "Your Email...") {
+			contact.emailInput.classList.add("default");
+			contact.emailInput.classList.remove("invalid");
+			contact.emailError.classList.remove("show");
+			contact.emailInput.classList.remove("valid");
+		}
+		else {
+			if (contact.emailInput.matches(':invalid')) {
+				contact.emailInput.classList.add("invalid");
+				contact.emailError.classList.add("show");
+				contact.emailInput.classList.remove("valid");
+				contact.emailInput.classList.remove("default");
+				// console.log("invalid check");
+			}
+			else if ((contact.emailInput.matches(':valid')) && contact.emailInput.value !== "") {
+				contact.emailInput.classList.add("valid");
+				contact.emailInput.classList.remove("invalid");
+				contact.emailError.classList.remove("show");
+				contact.emailInput.classList.remove("default");
+				
+				// console.log("valid check");
+			}
+
+			if(contact.emailInput.value === "") {
+				contact.emailInput.classList.remove("default");
+			}
+		}
+	},
 	// validatePhoneNumber
+	validatePhoneNumber: function validatePhoneNumber() {
+			
+		if((contact.phoneInput.value === "Your Phone Number...") || (contact.phoneInput.value === ""))  {
+			contact.phoneInput.classList.add("default");
+			contact.phoneInput.classList.remove("invalid");
+			contact.phoneError.classList.remove("show");
+			contact.phoneInput.classList.remove("valid");
+		}
+		else{
+			contact.phoneInput.classList.remove("default");
+
+			if((!contact.validPhoneNumber(contact.phoneInput.value)) && (contact.phoneInput.value !== ""))  {
+				contact.phoneInput.classList.add("invalid");
+				contact.phoneInput.classList.remove("valid");	
+				contact.phoneError.classList.add("show");
+			}
+			else if((contact.validPhoneNumber(contact.phoneInput.value)) && (contact.phoneInput.value !== ""))  {
+				contact.phoneInput.classList.add("valid");
+				contact.phoneInput.classList.remove("invalid");
+				contact.phoneError.classList.remove("show");
+			}
+
+		}
+	},
 	// validateMessage
+	validateMessage: function validateMessage() {
+
+		if((contact.messageInput.value === "Your Message... (500 character limit)") || (contact.messageInput === "")) {
+			contact.messageInput.classList.add("default");
+			contact.messageInput.classList.remove("invalid");
+			contact.messageError.classList.remove("show");
+			contact.messageInput.classList.remove("valid");
+		}
+		else{
+			contact.messageInput.classList.remove("default");
+
+			if((!contact.validMessage(contact.messageInput.value)) && (contact.messageInput.value !== ""))  {
+				contact.messageInput.classList.add("invalid");
+				contact.messageInput.classList.remove("valid");
+				contact.messageError.classList.add("show");
+			}
+			else if((contact.validMessage(contact.messageInput.value)) && (contact.messageInput.value !== ""))  {
+				contact.messageInput.classList.add("valid");
+				contact.messageInput.classList.remove("invalid");
+				contact.messageError.classList.remove("show");
+			}
+		}
+
+	},
+	validateSignUp: function validateSignUp() {
+
+		// Checked all fields are valid
+		if((contact.nameInput.classList.contains("default") || contact.nameInput.classList.contains("invalid")) || (contact.emailInput.value === "Your Email..." || contact.emailInput.matches(":invalid")) || (contact.phoneInput.classList.contains("default") || contact.phoneInput.classList.contains("invalid")) || (contact.messageInput.classList.contains("default") || contact.messageInput.classList.contains("invalid"))) {
+			contact.signUp.classList.add("deny");
+
+		}
+		else{
+			contact.signUp.classList.remove("deny");
+		}
+
+
+	}
+
+
 	// validateSignUp
 
 
@@ -104,7 +221,8 @@ var contact = {
 var popup = {
 	
 	backdrop: document.querySelector(".backdrop"),
-	content: document.querySelector(".popup__container"),
+	container: document.querySelector(".popup__container"),
+	content: document.querySelector(".popup"),
 	close: document.querySelector(".popup__close"),
 	items: document.querySelectorAll(".popup__content-container"),
 
@@ -259,7 +377,7 @@ window.onscroll = function (event)
 for (let i = 0; i < products.items.length; i++) {
 	products.items[i].addEventListener("click", function() {
 		popup.backdrop.classList.add("show");
-		popup.content.classList.add("show");
+		popup.container.classList.add("show");
 		document.body.classList.add("hidden-overflow");
 
 		if (i == 0) {
@@ -329,16 +447,20 @@ for (let i = 0; i < products.items.length; i++) {
 // close the popup and the backdrop upon clicking the close button
 // or clicking the backdrop
 
-popup.close.addEventListener("click", function(){
+popup.close.addEventListener("click", function(event){
 	popup.backdrop.classList.remove("show");
-	popup.content.classList.remove("show");
+	popup.container.classList.remove("show");
 	document.body.classList.remove("hidden-overflow");
 });
 
-popup.backdrop.addEventListener("click", function(){
-	popup.backdrop.classList.remove("show");
-	popup.content.classList.remove("show");
-	document.body.classList.remove("hidden-overflow");
+popup.container.addEventListener("click", function(event){
+	if(!((event.target === popup.content) || (popup.content.contains(event.target)))) {
+	
+		popup.backdrop.classList.remove("show");
+		popup.container.classList.remove("show");
+		document.body.classList.remove("hidden-overflow");
+		console.log(event.target);
+	}
 });
 
 // Make the founders links have a focused class on focus and have it removed on blur
@@ -505,6 +627,7 @@ function validateSignUp() {
 
 
 }
+
 
 validateSignUp();
 
