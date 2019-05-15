@@ -514,7 +514,7 @@
                                   <div class="form__error-message" id="phone-error">Please input a valid phone number.</div>
                                 </div>
                                 <div class="contact__field-2">
-                                    <textarea class="contact__text-input default" id="contact__message" type="text" placeholder="Your Message... (500 character limit)" onblur="fillField(this,'Your Message... (500 character limit)');" onfocus="clearField(this,'Your Message... (500 character limit)');"></textarea>
+                                    <textarea class="contact__text-input default" id="contact__message" type="text" maxlength="500" required="required" placeholder="Your Message... (500 character limit)" onblur="fillField(this,'Your Message... (500 character limit)');" onfocus="clearField(this,'Your Message... (500 character limit)');"></textarea>
                                     <div class="form__error-message" id="message-error">500 character limit reached.</div>
                                 </div>
                               </form>
