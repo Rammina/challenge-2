@@ -1,3 +1,5 @@
+/* Width breakpoints */
+
 @media screen and (min-width: 330px) {
 	.about__container {
 		padding-left: 0.7rem;
@@ -61,7 +63,7 @@
     .products__container {
         height: calc(70rem + 295vw);
     }
-    .about__text{
+    .about__text {
     	max-width: 19rem;
     }
 }
@@ -504,6 +506,167 @@
 		padding-left: calc((49% - 5rem) - 21rem);
 	}
 }
+
+/* Height breakpoints */
+@media (min-aspect-ratio: 1/2) {
+		@media screen and (min-height: 670px) {
+		.popup {
+			height: calc(90vw + 90vh);
+			min-height: 35rem;
+			max-height: 45rem;
+		}
+		.popup__text {
+			margin-top: 10%;
+		}
+	}
+
+	@media screen and (min-height: 760px) {
+		.popup {
+			min-height: 35rem;
+			max-height: 48rem;
+		}
+		.popup__text {
+			margin-top: calc(8% + 1rem);
+		}
+	}
+
+	@media screen and (min-height: 840px) {
+		.popup {
+			height: calc(62vw + 62vh);
+			min-height: 35rem;
+			max-height: 52rem;
+		}
+		.popup__text {
+			margin-top: calc(8% + 1rem);
+		}
+	}
+
+	@media screen and (min-height: 950px) {
+		.popup {
+			height: calc(62vw + 62vh);
+			min-height: 35rem;
+			max-height: 55rem;
+		}
+		.popup__text {
+			margin-top: calc(8% + 1rem);
+		}
+	}
+
+	@media screen and (min-height: 1000px) {
+		.popup {
+			height: calc(62vw + 62vh);
+			min-height: 35rem;
+			max-height: 58rem;
+		}
+		.popup__text {
+			margin-top: calc(6%);
+		}
+	}
+}
+
+
+@media (min-aspect-ratio: 3/4) {
+	@media screen and (min-height: 400px) {
+		.popup {
+			height: calc(78vw + 78vh);
+			min-height: 40rem;
+			max-height: 50rem;
+		}
+		.popup__text {
+			margin-top: 10%;
+		}
+	}
+
+	@media screen and (min-height: 470px) {
+		.popup {
+			height: calc(73vw + 73vh);
+			min-height: 40rem;
+			max-height: 43rem;
+		}
+		.popup__text {
+			margin-top: 10%;
+		}
+	}
+
+	@media screen and (min-height: 500px) {
+		.popup {
+			height: calc(61vw + 61vh);
+			min-height: 39rem;
+			max-height: 43rem;
+		}
+		.popup__text {
+			margin-top: 10%;
+		}
+	}
+	
+	@media screen and (min-height: 570px) {
+		.popup {
+			height: calc(58vw + 58vh);
+			min-height: 39rem;
+			max-height: 43rem;
+		}
+		.popup__text {
+			margin-top: 10%;
+		}
+	}
+
+	@media screen and (min-height: 670px) {
+		.popup {
+			height: calc(58vw + 58vh);
+			min-height: 39rem;
+			max-height: 43rem;
+		}
+		.popup__text {
+			margin-top: 10%;
+		}
+	}
+
+	@media screen and (min-height: 760px) {
+		.popup {
+			height: calc(58vw + 58vh);
+			min-height: 39rem;
+			max-height: 44rem;
+		}
+		.popup__text {
+			margin-top: 6%;
+		}
+	}
+
+	@media screen and (min-height: 840px) {
+		.popup {
+			height: calc(58vw + 58vh);
+			min-height: 39rem;
+			max-height: 49rem;
+		}
+		.popup__text {
+			margin-top: 6%;
+		}
+	}
+
+	@media screen and (min-height: 950px) {
+		.popup {
+			height: calc(58vw + 58vh);
+			min-height: 39rem;
+			max-height: 55rem;
+		}
+		.popup__text {
+			margin-top: 6%;
+		}
+	}
+
+	@media screen and (min-height: 1000px) {
+		.popup {
+			height: calc(58vw + 58vh);
+			min-height: 39rem;
+			max-height: 56rem;
+		}
+		.popup__text {
+			margin-top: 5%;
+		}
+	}
+}
+
+
 
 /* Aspect ratio breakpoints
 @media screen and (min-aspect-ratio: 16 / 9) {

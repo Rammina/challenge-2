@@ -506,11 +506,11 @@
                               <h2 id="first-contact"><a name="contact">Contact Us</a></h2>
                               <form class="contact__flex">
                                 <div class="contact__field-1">
-                                  <input class="contact__text-input default" id="contact__name" type="text" role="name text field" placeholder="Your Name..." onblur="fillField(this,'Your Name...');" onfocus="clearField(this,'Your Name...');"/>
+                                  <input class="contact__text-input default" id="contact__name" type="text" role="name text field" placeholder="Your Name..." maxlength="100" onblur="fillField(this,'Your Name...');" onfocus="clearField(this,'Your Name...');"/>
                                   <div class="form__error-message" id="name-error">Please input a valid name.</div>
-                                  <input class="contact__text-input default" id="contact__email" type="email" placeholder="Your Email..." value="Your Email..." onblur="fillField(this,'Your Email...');" onfocus="clearField(this,'Your Email...');"/>
+                              <input class="contact__text-input default" id="contact__email" type="email" placeholder="Your Email..." value="Your Email..." maxlength="254" onblur="fillField(this,'Your Email...');" onfocus="clearField(this,'Your Email...');"/>
                                   <div class="form__error-message" id="email-error">Please input a valid email address.</div>
-                                  <input class="contact__text-input default" id="contact__phone" type="text" placeholder="Your Phone Number..." onblur="fillField(this,'Your Phone Number...');" onfocus="clearField(this,'Your Phone Number...');"/>
+                                  <input class="contact__text-input default" id="contact__phone" type="text" placeholder="Your Phone Number..." maxlength="24" onblur="fillField(this,'Your Phone Number...');" onfocus="clearField(this,'Your Phone Number...');"/>
                                   <div class="form__error-message" id="phone-error">Please input a valid phone number.</div>
                                 </div>
                                 <div class="contact__field-2">

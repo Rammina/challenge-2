@@ -391,9 +391,9 @@ ul {
     z-index: 101;
     display: inline-block;
     width: 92%;
-    height: 180vw;
-    min-height: 43rem;
-    max-height: 65rem;
+    height: calc(90vw + 90vh);
+    min-height: 35rem;
+    max-height: 42rem;
     background-color: rgb(41, 41, 41);
     margin: 4vh 4%;
     border: 1px solid rgb(0, 0, 0);
@@ -429,6 +429,10 @@ ul {
 
 .popup__content-container {
     display: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* align-items: space-between; */
+    justify-content: center;
     width: 90%;
     max-width: 58.125rem;
     min-width: 16rem;
@@ -439,7 +443,7 @@ ul {
 }
 
 .popup__content-container.show {
-    display: block;
+    display: flex;
 }
 
 .popup__title-container {
@@ -452,7 +456,7 @@ ul {
 
 .popup__title {
     margin: calc(5% + 1rem) auto;
-    margin-top: 8vh;
+    margin-top: 7vh;
     color: rgb(255, 232, 129);
     font-size: 2.7rem;
     font-family: 'Lato', sans-serif;
@@ -467,8 +471,8 @@ ul {
     height: 19vh;
     min-height: 11.5rem;
     margin: 0 auto;
-    margin-top: 4vh;
-    margin-bottom: 1rem;
+    margin-top: calc(2vh + 2vw);
+    margin-bottom: 0rem;
     /* background-color: green; */
     text-align: center;
 }
@@ -507,7 +511,7 @@ ul {
     min-height: 19.6rem;
     max-height: 104vw;
     overflow: hidden;
-    margin: auto;
+    margin: 0 auto;
     /* margin: 0 auto; */
 }
 
@@ -516,7 +520,6 @@ ul {
     width: 100%;
     height: 100%;
     border-radius: 5px;
-    
 }
 
 #about {
