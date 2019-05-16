@@ -34,9 +34,11 @@ var navbar = {
 	menuitem: document.querySelectorAll(".nav__item"),
 	showMenu: function showMenu() {
 		navbar.menuitems.classList.add("show")
+		navbar.menubutton.setAttribute("aria-expanded", "true");
 	},
 	hideMenu: function hideMenu() {
 		navbar.menuitems.classList.remove("show")
+		navbar.menubutton.setAttribute("aria-expanded", "false");
 	},
 	menutouched: false
 }
@@ -85,13 +87,17 @@ var contact = {
 	emailClick: false,
 	signUp: document.querySelector("#contact-submit"),
 	signUpValid: false,
-	// functions
+	// method
+
+	// Functions that get rid of placeholders
+	// The first one restores the placeholder if the default value is not changed
 	fillField: function fillField(input, val) {
 		if(input.value === ""){
 				input.value = val;
 			
 		}
 	},
+	// The second one removes the placeholder when the input box is on focus
 	clearField: function clearField(input, val) {
 		if(input.value === val){
 			input.value = "";
@@ -161,8 +167,7 @@ var contact = {
 				contact.emailInput.classList.remove("invalid");
 				contact.emailError.classList.remove("show");
 				contact.emailInput.classList.remove("default");
-				
-				// console.log("valid check");
+
 			}
 
 			if(contact.emailInput.value === "") {
@@ -198,7 +203,7 @@ var contact = {
 	// validateMessage
 	validateMessage: function validateMessage() {
 
-		if((contact.messageInput.value === "Your Message... (500 character limit)") || (contact.messageInput === "")) {
+		if((contact.messageInput.value === "Your Message... (500 character limit)") || (contact.messageInput.value === "")) {
 			contact.messageInput.classList.add("default");
 			contact.messageInput.classList.remove("invalid");
 			contact.messageError.classList.remove("show");
@@ -230,14 +235,14 @@ var contact = {
 		else{
 			contact.signUp.classList.remove("deny");
 		}
-
-
+	},
+	validateAllFormFields: function validateAllFormFields() {
+		contact.validateName();
+		contact.validateEmail();
+		contact.validatePhoneNumber();
+		contact.validateMessage();
+		contact.validateSignUp();
 	}
-
-
-	// validateSignUp
-
-
 }
 
 
@@ -402,6 +407,8 @@ for (let i = 0; i < products.items.length; i++) {
 	products.items[i].addEventListener("click", function() {
 		popup.backdrop.classList.add("show");
 		popup.container.classList.add("show");
+		popup.content.removeAttribute("aria-hidden");
+		popup.content.setAttribute("aria-modal", "true");
 		document.body.classList.add("hidden-overflow");
 
 		if (i == 0) {
@@ -474,6 +481,8 @@ for (let i = 0; i < products.items.length; i++) {
 popup.close.addEventListener("click", function(event){
 	popup.backdrop.classList.remove("show");
 	popup.container.classList.remove("show");
+	popup.content.setAttribute("aria-hidden", "true");
+	popup.content.removeAttribute("aria-modal");
 	document.body.classList.remove("hidden-overflow");
 });
 
@@ -482,6 +491,8 @@ popup.container.addEventListener("click", function(event){
 	
 		popup.backdrop.classList.remove("show");
 		popup.container.classList.remove("show");
+		popup.content.setAttribute("aria-hidden", "true");
+		popup.content.removeAttribute("aria-modal");
 		document.body.classList.remove("hidden-overflow");
 		console.log(event.target);
 	}
@@ -499,201 +510,52 @@ for(let i = 0; i < founders.links.length; i++){
 		founders.svgs[i].classList.remove("focused");
 	})
 }
-
-// Functions that get rid of placeholders
-// The first one restores the placeholder if the default value is not changed
-function fillField(input,val) {
-      if(input.value === ""){
-         input.value = val;
-      }
-};
-
-// The second one removes the placeholder when the input box is on focus
-function clearField(input,val) {
-      if(input.value === val){
-         input.value = "";
-      }
-};
-
-function validNameField(string) {
-	let regex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
-
-	let notValid = regex.test(string);
-	if(notValid) {
-		return false;
-	}
-	if(string.length > 100) {
-		return false;
-
-	}
-	return true;
 	
-}
-
-function validPhoneNumber(string) {
-	let digits = string.match(/\d/g);
-
-	return ((digits) && (digits.length <= 15 && digits.length >= 4));
-
-}
-
-function validMessage(string) {
-	return (string.length <= 500);
-}
-
-function validateSignUp() {
-
-
-	if((contact.nameInput.value === "Your Name...") || (contact.nameInput.value === ""))  {
-		contact.nameInput.classList.add("default");
-		contact.nameInput.classList.remove("valid");
-		contact.nameInput.classList.remove("invalid");
-		contact.nameError.classList.remove("show");
-	}
-	else{
-		contact.nameInput.classList.remove("default");
-	
-
-		if((!validNameField(contact.nameInput.value)) && (contact.nameInput.value !== ""))  {
-			contact.nameInput.classList.add("invalid");
-			contact.nameError.classList.add("show");
-			contact.nameInput.classList.remove("valid");
-		}
-		else if((validNameField(contact.nameInput.value)) && (contact.nameInput.value !== ""))  {
-			contact.nameInput.classList.add("valid");
-			contact.nameInput.classList.remove("invalid");
-			contact.nameError.classList.remove("show");
-		}
-	}
-
-	if (contact.emailInput.value === "Your Email...") {
-		contact.emailInput.classList.add("default");
-		contact.signUp.classList.add("deny");
-		contact.emailInput.classList.remove("invalid");
-		contact.emailError.classList.remove("show");
-		contact.emailInput.classList.remove("valid");
-	}
-	else {
-		if (contact.emailInput.matches(':invalid')) {
-			contact.signUp.classList.add("deny");
-			contact.emailInput.classList.add("invalid");
-			contact.emailError.classList.add("show");
-			contact.emailInput.classList.remove("valid");
-			contact.emailInput.classList.remove("default");
-			// console.log("invalid check");
-		}
-		else if ((contact.emailInput.matches(':valid')) && contact.emailInput.value !== "") {
-			contact.signUp.classList.remove("deny");
-			contact.emailInput.classList.add("valid");
-			contact.emailInput.classList.remove("invalid");
-			contact.emailError.classList.remove("show");
-			contact.emailInput.classList.remove("default");
-			
-			// console.log("valid check");
-		}
-
-		if(contact.emailInput.value === "") {
-			contact.emailInput.classList.remove("default");
-		}
-	}
-
-	if((contact.phoneInput.value === "Your Phone Number...") || (contact.phoneInput.value === ""))  {
-		contact.phoneInput.classList.add("default");
-		contact.phoneInput.classList.remove("invalid");
-		contact.phoneError.classList.remove("show");
-		contact.phoneInput.classList.remove("valid");
-	}
-	else{
-		contact.phoneInput.classList.remove("default");
-
-		if((!validPhoneNumber(contact.phoneInput.value)) && (contact.phoneInput.value !== ""))  {
-			contact.phoneInput.classList.add("invalid");
-			contact.phoneInput.classList.remove("valid");	
-			contact.phoneError.classList.add("show");
-		}
-		else if((validPhoneNumber(contact.phoneInput.value)) && (contact.phoneInput.value !== ""))  {
-			contact.phoneInput.classList.add("valid");
-			contact.phoneInput.classList.remove("invalid");
-			contact.phoneError.classList.remove("show");
-		}
-
-	}
-
-	if((contact.messageInput.value === "Your Message... (500 character limit)") || (contact.messageInput === "")) {
-		contact.messageInput.classList.add("default");
-		contact.messageInput.classList.remove("invalid");
-		contact.messageError.classList.remove("show");
-		contact.messageInput.classList.remove("valid");
-	}
-	else{
-		contact.messageInput.classList.remove("default");
-
-		if((!validMessage(contact.messageInput.value)) && (contact.messageInput.value !== ""))  {
-			contact.messageInput.classList.add("invalid");
-			contact.messageInput.classList.remove("valid");
-			contact.messageError.classList.add("show");
-		}
-		else if((validMessage(contact.messageInput.value)) && (contact.messageInput.value !== ""))  {
-			contact.messageInput.classList.add("valid");
-			contact.messageInput.classList.remove("invalid");
-			contact.messageError.classList.remove("show");
-		}
-	}
-
-	// Checked all fields are valid
-	if((contact.nameInput.classList.contains("default") || contact.nameInput.classList.contains("invalid")) || (contact.emailInput.value === "Your Email..." || contact.emailInput.matches(":invalid")) || (contact.phoneInput.value === "" || contact.phoneInput.value === "Your Phone Number..." ) || (contact.messageInput.value === "" || contact.messageInput.value === "Your Message... (500 character limit)")) {
-		contact.signUp.classList.add("deny");
-
-	}
-	else{
-		contact.signUp.classList.remove("deny");
-	}
-
-
-}
-
-
-validateSignUp();
+contact.validateAllFormFields();
 
 
 contact.nameInput.addEventListener("focus", function(){
-	validateSignUp();
+	contact.validateName();
 	contact.nameInput.classList.remove("default");
 });
 contact.nameInput.addEventListener("blur", function(){
-	validateSignUp();
+	contact.validateName();
+	contact.validateSignUp();
 });
 
 
 contact.emailInput.addEventListener("focus", function(){
-	validateSignUp();
+	contact.validateEmail();
 	contact.emailInput.classList.remove("default");
 });
 contact.emailInput.addEventListener("blur", function(){
-	validateSignUp();
+	contact.validateEmail();
+	contact.validateSignUp();
 });
 
 
 contact.phoneInput.addEventListener("focus", function(){
-	validateSignUp();
+	contact.validatePhoneNumber();
 	contact.phoneInput.classList.remove("default");
 });
 contact.phoneInput.addEventListener("blur", function(){
-	validateSignUp();
+	contact.validatePhoneNumber();
+	contact.validateSignUp();
 });
 
 
 contact.messageInput.addEventListener("focus", function(){
-	validateSignUp();
+	contact.validateMessage();
 	contact.messageInput.classList.remove("default");
 });
 contact.messageInput.addEventListener("blur", function(){
-	validateSignUp();
+	contact.validateMessage();
+	contact.validateSignUp();
 });
 
 
 contact.signUp.addEventListener("mouseover", function(){
-	validateSignUp();
+	contact.validateSignUp();
 });
 
 
