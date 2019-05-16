@@ -1,3 +1,27 @@
+// Checking SVG support
+
+var svgSupport = !!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect;
+
+if (!(svgSupport)) {
+
+	let allSvg = document.getElementsByTagName("svg");
+
+	for (let svg of allSvg) {
+		svg.classList.add("no-display");
+		svg.classList.add("hide-svg");
+	}
+
+	let allSvgFallback = document.querySelectorAll(".svg-fallback");
+
+	for (let png of allSvgFallback) {
+		png.classList.remove("no-display");
+		png.classList.remove("hide-png");
+	}
+
+
+
+}
+
 // document objects
 
 // navigation bar objects

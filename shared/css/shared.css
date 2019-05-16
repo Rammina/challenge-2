@@ -61,6 +61,14 @@ li {
     list-style-type: none;
 }
 
+.no-display.hide-png {
+    display: none;
+}
+
+.no-display.hide-svg {
+    display: none;
+}
+
 .main-header{
     z-index: 10;
     margin: 0;

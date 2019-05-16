@@ -32,7 +32,7 @@ ul {
     position: relative;
     min-height: 33.75rem;
     width: 100%;
-    background: url(../images/home-tent-2-small.png);
+    background: url(../images/home-tent-2-small.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 56% 90%;
@@ -415,6 +415,7 @@ ul {
     margin-left: calc(99% - 2.5rem);
     margin-right: 0;
     margin-top: 1rem;
+    
 }
 
 .popup__close svg {
