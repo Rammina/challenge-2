@@ -54,7 +54,7 @@ var services = {
 // Product section object
 var products = { 
 	title: document.querySelector("#products"),
-	items: document.querySelectorAll(".products__overlay")
+	items: document.querySelectorAll(".products__middle")
 };
 
 // about section
@@ -250,9 +250,9 @@ var contact = {
 var popup = {
 	
 	backdrop: document.querySelector(".backdrop"),
-	container: document.querySelector(".popup__container"),
-	content: document.querySelector(".popup"),
-	close: document.querySelector(".popup__close"),
+	container: document.querySelectorAll(".popup__container"),
+	content: document.querySelectorAll(".popup"),
+	close: document.querySelectorAll(".popup__close"),
 	items: document.querySelectorAll(".popup__content-container"),
 
 
@@ -406,97 +406,71 @@ window.onscroll = function (event)
 for (let i = 0; i < products.items.length; i++) {
 	products.items[i].addEventListener("click", function() {
 		popup.backdrop.classList.add("show");
-		popup.container.classList.add("show");
-		popup.content.removeAttribute("aria-hidden");
-		popup.content.setAttribute("aria-modal", "true");
+		popup.container[i].classList.add("show");
+		popup.content[i].removeAttribute("aria-hidden");
+		popup.content[i].setAttribute("aria-modal", "true");
 		document.body.classList.add("hidden-overflow");
+		setTimeout(function() {
+			popup.content[i].focus();
+		}, 405);
 
-		if (i == 0) {
-			for(let i = 0; i < popup.items.length; i++) {
-				if (i !== 0) {
-					popup.items[i].classList.remove("show");
-				}
-				else if (i === 0) {
-					popup.items[i].classList.add("show");
-				}
-			}
-		}
-		else if (i == 1) {
-			for(let i = 0; i < popup.items.length; i++) {
-				if (i !== 1) {
-					popup.items[i].classList.remove("show");
-				}
-				else if (i === 1) {
-					popup.items[i].classList.add("show");
-				}
-			}
-		}
-		else if (i == 2) {
-			for(let i = 0; i < popup.items.length; i++) {
-				if (i !== 2) {
-					popup.items[i].classList.remove("show");
-				}
-				else if (i === 2) {
-					popup.items[i].classList.add("show");
-				}
-			}
-		}
-		else if (i == 3) {
-			for(let i = 0; i < popup.items.length; i++) {
-				if (i !== 3) {
-					popup.items[i].classList.remove("show");
-				}
-				else if (i === 3) {
-					popup.items[i].classList.add("show");
-				}
-			}
-		}
-		else if (i == 4) {
-			for(let i = 0; i < popup.items.length; i++) {
-				if (i !== 4) {
-					popup.items[i].classList.remove("show");
-				}
-				else if (i === 4) {
-					popup.items[i].classList.add("show");
-				}
-			}
-		}
-		else if (i == 5) {
-			for(let i = 0; i < popup.items.length; i++) {
-				if (i !== 5) {
-					popup.items[i].classList.remove("show");
-				}
-				else if (i === 5) {
-					popup.items[i].classList.add("show");
-				}
-			}
+	});
+
+	products.items[i].addEventListener("keydown", function(event){
+		if(event.key === "Enter" || event.which === 13 || event.keyCode === 13) {
+			popup.backdrop.classList.add("show");
+			popup.container[i].classList.add("show");
+			popup.content[i].removeAttribute("aria-hidden");
+			popup.content[i].setAttribute("aria-modal", "true");
+			popup.content[i].focus();
+			document.body.classList.add("hidden-overflow");
+
 		}
 	});
 }
 
 
+
 // close the popup and the backdrop upon clicking the close button
 // or clicking the backdrop
+for (let i = 0; i < popup.close.length; i++) {
 
-popup.close.addEventListener("click", function(event){
-	popup.backdrop.classList.remove("show");
-	popup.container.classList.remove("show");
-	popup.content.setAttribute("aria-hidden", "true");
-	popup.content.removeAttribute("aria-modal");
-	document.body.classList.remove("hidden-overflow");
-});
 
-popup.container.addEventListener("click", function(event){
-	if(!((event.target === popup.content) || (popup.content.contains(event.target)))) {
-	
+	popup.close[i].addEventListener("click", function(event){
 		popup.backdrop.classList.remove("show");
-		popup.container.classList.remove("show");
-		popup.content.setAttribute("aria-hidden", "true");
-		popup.content.removeAttribute("aria-modal");
+		popup.container[i].classList.remove("show");
+		popup.content[i].setAttribute("aria-hidden", "true");
+		popup.content[i].removeAttribute("aria-modal");
 		document.body.classList.remove("hidden-overflow");
-		console.log(event.target);
-	}
-});
+	});
+
+	popup.container[i].addEventListener("click", function(event){
+		if(!((event.target === popup.content[i]) || (popup.content[i].contains(event.target)))) {
+	
+			popup.backdrop.classList.remove("show");
+			popup.container[i].classList.remove("show");
+			popup.content[i].setAttribute("aria-hidden", "true");
+			popup.content[i].removeAttribute("aria-modal");
+			document.body.classList.remove("hidden-overflow");
+		// console.log(event.target);
+		}
+	});
+
+	popup.content[i].addEventListener("keydown", function(event){
+		if(event.key === "Escape" || event.keyCode === 27 || event.which === 27) {
+
+			popup.backdrop.classList.remove("show");
+			popup.container[i].classList.remove("show");
+			popup.content[i].setAttribute("aria-hidden", "true");
+			popup.content[i].removeAttribute("aria-modal");
+			document.body.classList.remove("hidden-overflow");
+		}
+	});
+}
+
+
+
+
 
 // Make the founders links have a focused class on focus and have it removed on blur
 for(let i = 0; i < founders.links.length; i++){

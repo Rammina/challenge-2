@@ -57,6 +57,12 @@ a:focus {
     box-shadow: 0px 0px 1px 2px #FFFFFF, 0px 0px 2px 3px #969696, 0px 0px 3px 5px #000000;
 }
 
+div:focus {
+    outline: none;
+    -webkit-box-shadow: 0px 0px 1px 2px #FFFFFF, 0px 0px 2px 3px #969696, 0px 0px 3px 5px #000000; 
+    box-shadow: 0px 0px 1px 2px #FFFFFF, 0px 0px 2px 3px #969696, 0px 0px 3px 5px #000000;
+}
+
 li {
     list-style-type: none;
 }
