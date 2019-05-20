@@ -110,6 +110,12 @@ ul {
     text-shadow: 1px 1px 0px rgba(255, 203, 255, 0.507);
 }
 
+#shopping-shop:focus {
+    outline: none;
+    -webkit-box-shadow: 0px 0px 1px 2px #FFFFFF, 0px 0px 2px 3px #969696, 0px 0px 3px 5px #000000; 
+    box-shadow: 0px 0px 1px 2px #FFFFFF, 0px 0px 2px 3px #969696, 0px 0px 3px 5px #000000;
+}
+
 .section__title-container {
     width: 100%;
     padding: 5rem 0;
@@ -210,11 +216,26 @@ ul {
     filter:  invert(10%) sepia(1%) saturate(0%) hue-rotate(7deg) brightness(108%) contrast(99%);
 }
 
+.services__logo img {
+    display: inline-block;
+    width: 6rem;
+    height: 6rem;
+    margin: 1.5rem;
+    vertical-align: middle;
+    filter:  invert(10%) sepia(1%) saturate(0%) hue-rotate(7deg) brightness(108%) contrast(99%);
+}
+
 .services__logo image {
     text-align: center;
     overflow: hidden;
     width: 6rem;
     height: 6rem;
+}
+
+#support-svg, #support-png, #support-image, #repair-svg, #repair-png, #repair-image {
+    margin: 1.5rem 2rem;
+    height: 6rem;
+    width: 5rem;
 }
 
 .services__text {
@@ -319,7 +340,7 @@ ul {
     opacity: 1;
 }
 
-.products__info {
+.products__info, .products__info-png {
     display: inline-block;
     vertical-align: middle;
     height: 6rem;
@@ -327,6 +348,11 @@ ul {
     margin: auto;
     left: 0;
     text-align: center;
+}
+
+.products__info-png {
+    opacity: 0.8;
+    filter: invert(27%) sepia(19%) saturate(428%) hue-rotate(190deg) brightness(93%) contrast(91%);
 }
 
 .products__overlay svg {
@@ -437,7 +463,7 @@ ul {
     
 }
 
-.popup__close svg {
+.popup__close svg, .popup__close-png {
     width: 100%;
     height: 100%;
     filter: invert(100%) sepia(14%) saturate(7480%) hue-rotate(290deg) brightness(120%) contrast(108%);
@@ -792,18 +818,17 @@ ul {
     border-radius: 50%;
 }
 
-.founders__svg {
+.founders__svg, .founders__png {
     width: 3rem;
     height: 3rem;
     filter: invert(89%) sepia(63%) saturate(5297%) hue-rotate(179deg) brightness(123%) contrast(100%);
-    
 }
 
-.founders__svg:hover {
+.founders__svg:hover, .founders__png:hover {
     filter: invert(84%) sepia(34%) saturate(581%) hue-rotate(346deg) brightness(106%) contrast(104%);
 }
 
-.founders__svg.focused {
+.founders__svg.focused, .founders__png.focused {
     filter: invert(84%) sepia(34%) saturate(581%) hue-rotate(346deg) brightness(106%) contrast(104%);
 }
 

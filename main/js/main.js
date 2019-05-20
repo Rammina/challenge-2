@@ -254,7 +254,23 @@ var popup = {
 	content: document.querySelectorAll(".popup"),
 	close: document.querySelectorAll(".popup__close"),
 	items: document.querySelectorAll(".popup__content-container"),
-
+	openModal(i) {
+		popup.backdrop.classList.add("show");
+		popup.container[i].classList.add("show");
+		popup.content[i].removeAttribute("aria-hidden");
+		popup.content[i].setAttribute("aria-modal", "true");
+		document.body.classList.add("hidden-overflow");
+		setTimeout(function() {
+			popup.content[i].focus();
+		}, 405);
+	},
+	closeModal(i) {
+		popup.backdrop.classList.remove("show");
+		popup.container[i].classList.remove("show");
+		popup.content[i].setAttribute("aria-hidden", "true");
+		popup.content[i].removeAttribute("aria-modal");
+		document.body.classList.remove("hidden-overflow");
+	}
 
 
 	// tents: document.querySelector("#popup-tents"),
@@ -405,25 +421,13 @@ window.onscroll = function (event)
 // Clicking each item in the products will open the backdrop pop-up window
 for (let i = 0; i < products.items.length; i++) {
 	products.items[i].addEventListener("click", function() {
-		popup.backdrop.classList.add("show");
-		popup.container[i].classList.add("show");
-		popup.content[i].removeAttribute("aria-hidden");
-		popup.content[i].setAttribute("aria-modal", "true");
-		document.body.classList.add("hidden-overflow");
-		setTimeout(function() {
-			popup.content[i].focus();
-		}, 405);
+		popup.openModal(i);
 
 	});
 
 	products.items[i].addEventListener("keydown", function(event){
 		if(event.key === "Enter" || event.which === 13 || event.keyCode === 13) {
-			popup.backdrop.classList.add("show");
-			popup.container[i].classList.add("show");
-			popup.content[i].removeAttribute("aria-hidden");
-			popup.content[i].setAttribute("aria-modal", "true");
-			popup.content[i].focus();
-			document.body.classList.add("hidden-overflow");
+			popup.openModal(i);
 
 		}
 	});
@@ -437,21 +441,13 @@ for (let i = 0; i < popup.close.length; i++) {
 
 
 	popup.close[i].addEventListener("click", function(event){
-		popup.backdrop.classList.remove("show");
-		popup.container[i].classList.remove("show");
-		popup.content[i].setAttribute("aria-hidden", "true");
-		popup.content[i].removeAttribute("aria-modal");
-		document.body.classList.remove("hidden-overflow");
+		popup.closeModal(i);
 	});
 
 	popup.container[i].addEventListener("click", function(event){
 		if(!((event.target === popup.content[i]) || (popup.content[i].contains(event.target)))) {
 	
-			popup.backdrop.classList.remove("show");
-			popup.container[i].classList.remove("show");
-			popup.content[i].setAttribute("aria-hidden", "true");
-			popup.content[i].removeAttribute("aria-modal");
-			document.body.classList.remove("hidden-overflow");
+			popup.closeModal(i);
 		// console.log(event.target);
 		}
 	});
@@ -459,11 +455,7 @@ for (let i = 0; i < popup.close.length; i++) {
 	popup.content[i].addEventListener("keydown", function(event){
 		if(event.key === "Escape" || event.keyCode === 27 || event.which === 27) {
 
-			popup.backdrop.classList.remove("show");
-			popup.container[i].classList.remove("show");
-			popup.content[i].setAttribute("aria-hidden", "true");
-			popup.content[i].removeAttribute("aria-modal");
-			document.body.classList.remove("hidden-overflow");
+			popup.closeModal(i);
 		}
 	});
 }
