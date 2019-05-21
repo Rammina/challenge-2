@@ -254,6 +254,16 @@ var popup = {
 	content: document.querySelectorAll(".popup"),
 	close: document.querySelectorAll(".popup__close"),
 	items: document.querySelectorAll(".popup__content-container"),
+	focusedElementbeforeModal: null,
+	// Find all focusable children
+	// focusableElementsString: 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable], [tabindex="-1"]',
+
+	// focusableElements: popup.content.querySelectorAll(".popup__close"),
+	// // Convert Nodelist to Array
+	// focusableElements: Array.prototype.slice.call(popup.focusableElements),
+
+	// firstTabStop: popup.focusableElements[0],
+	// lastTabStop: popup.focusableElements[popup.focusableElements.length - 1],
 	openModal(i) {
 		popup.backdrop.classList.add("show");
 		popup.container[i].classList.add("show");
@@ -263,13 +273,18 @@ var popup = {
 		setTimeout(function() {
 			popup.content[i].focus();
 		}, 405);
+		popup.focusedElementbeforeModal = document.activeElement;
 	},
+	
+	
 	closeModal(i) {
 		popup.backdrop.classList.remove("show");
 		popup.container[i].classList.remove("show");
 		popup.content[i].setAttribute("aria-hidden", "true");
 		popup.content[i].removeAttribute("aria-modal");
 		document.body.classList.remove("hidden-overflow");
+		// Set focus back to element that had it before the modal was opened
+    	popup.focusedElementbeforeModal.focus();
 	}
 
 
@@ -443,6 +458,11 @@ for (let i = 0; i < popup.close.length; i++) {
 	popup.close[i].addEventListener("click", function(event){
 		popup.closeModal(i);
 	});
+	popup.close[i].addEventListener("keydown", function(event){
+		if(event.key === "Enter" || event.which === 13 || event.keyCode === 13) {
+			popup.closeModal(i);
+		}
+	});
 
 	popup.container[i].addEventListener("click", function(event){
 		if(!((event.target === popup.content[i]) || (popup.content[i].contains(event.target)))) {
@@ -451,16 +471,49 @@ for (let i = 0; i < popup.close.length; i++) {
 		// console.log(event.target);
 		}
 	});
-
-	popup.content[i].addEventListener("keydown", function(event){
-		if(event.key === "Escape" || event.keyCode === 27 || event.which === 27) {
-
-			popup.closeModal(i);
-		}
-	});
 }
 
 
+for(let i = 0; i < popup.content.length; i++) {
+	popup.content[i].addEventListener('keydown', function trapTabKey(event) {
+		// Check for TAB key press
+		if (event.keyCode === 9) {
+
+			// SHIFT + TAB
+			if (event.shiftKey) {
+				if (document.activeElement === popup.content[i]) {
+					event.preventDefault();
+					popup.close[i].focus();
+				}
+				else if (document.activeElement === popup.close[i]) {
+					event.preventDefault();
+					popup.content[i].focus();
+				}
+			}
+			// TAB
+			else {
+				if (document.activeElement === popup.close[i]) {
+					event.preventDefault();
+					popup.content[i].focus();
+				}
+				else if (document.activeElement === popup.content[i]) {
+					event.preventDefault();
+					popup.close[i].focus();
+				}
+			}
+		}
+
+		//ESCAPE
+		if (event.keyCode === 27) {
+			popup.closeModal(i);
+		}
+	},)
+	
+	// Listen for indicators to close the modal
+	popup.container[i].addEventListener('click', function(event) {
+		popup.closeModal(i);
+	});
+}
 
 
 
