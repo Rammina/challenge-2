@@ -1,3 +1,17 @@
+// Screen loader
+
+setTimeout(function () {
+	if (document.readyState === 'loading') {  // Loading hasn't finished yet
+		document.addEventListener('DOMContentLoaded', function () {
+			document.querySelector(".loader-container").classList.add("no-display");
+
+		});
+	} //Loading has already finished
+	else if(document.readyState === "complete" || document.readyState === "interactive" || document.readyState === "loaded"){
+		console.log(" HTML loaded");
+		document.querySelector(".loader-container").classList.add("no-display"); //Get rid of the loader
+	}
+}, 600);
 // Checking SVG support
 
 var svgSupport = !!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect;
