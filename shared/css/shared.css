@@ -84,25 +84,59 @@ li {
     position: relative;
     display: block;
     border-radius: 50%;
-    width: 15rem;
-    height: 15rem;
-    margin: calc(60vh - 7.5rem) auto;
+    width: 16rem;
+    height: 16rem;
+    margin: calc(50vh - 8rem) auto;
     /* -webkit-box-shadow: inset 0px 0px 2px 10px #FFFFFF;
     -moz-box-shadow: inset 0px 0px 2px 10px #FFFFFF;
     box-shadow: inset 0px 0px 2px 10px #FFFFFF; */
     vertical-align: middle;
 }
+/*reminder ( because I might forget ):*/
+/*Convert all of the pixels to rem */
+
+.loader__smoke{
+    width: 40px;
+    height: 25px;
+    
+    margin: 0rem auto;
+    margin-top: 0.7rem;
+    border-radius: 50%;
+    background-color: #bbb;
+    box-shadow: 0 0 0 1px #eee, 0 0 0 4px black;
+
+
+}
+
+
+#smoke-1{
+    width: 60px;
+    height: 33px;
+    margin-right: 7%;
+    animation: smoking-1 2s infinite;
+}
+
+#smoke-2{
+    margin-right: 27%;
+    animation: smoking-2 2s infinite;
+}
+
+#smoke-3{
+    width: 30px;
+    height: 17px;
+    margin-right: 39%;
+    animation: smoking-3 2s infinite;
+}
 
 
 .loader__message-icon{
     margin: 0 auto;
-    width: 180px;
+    width: 140px;
 }
 
 .loader__fire-svg, .loader__fire-image {
-    width: 180px;
-    height: 180px;
-    
+    width: 140px;
+    height: 140px;
 }
 
 /* .loader__message-border{
@@ -371,16 +405,29 @@ li {
 }
 
 
-@keyframes rotate-loader{
-    0% {transform: rotateZ(180deg);}
-    100% {transform: rotateZ(535deg);}
+/*@keyframes rotate-loader{*/
+    /*0% {transform: rotateZ(180deg);}*/
+    /*100% {transform: rotateZ(535deg);}*/
+/*}*/
+
+@keyframes smoking-1{
+    0% {opacity: 0;}
+    60% {opacity: 0;}
+    61% {opacity: 1;}
+    100% {opacity: 1;}
 }
 
+@keyframes smoking-2{
+    0% {opacity: 0;}
+    40% {opacity: 0;}
+    41% {opacity: 1;}
+    100% {opacity: 1;}
+}
 
-
-
-
-
-
-
+@keyframes smoking-3{
+    0% {opacity: 0;}
+    20% {opacity: 0;}
+    21% {opacity: 1;}
+    100% {opacity: 1;}
+}
 

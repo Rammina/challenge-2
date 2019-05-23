@@ -99,3 +99,53 @@
 		max-width: 80rem;
 	}
 }
+
+/*Height and width breakpoint*/
+/*Change to rem if I forgot any pixel value*/
+@media screen and (min-width: 600px) and (min-height: 600px) {
+	.loader__message-container{
+		width: 24rem;
+		height: 24rem;
+		margin: calc(50vh - 12rem) auto;
+
+
+	}
+	#smoke-1{
+		width: 5.7rem;
+		height: 3rem;
+	}
+	#smoke-2{
+		width: 3.8rem;
+		height: 2.5rem;
+	}
+	#smoke-3{
+		width: 3rem;
+		height: 1.7rem;
+	}
+	.loader__message-icon{
+		width: 13rem;
+	}
+	.loader__fire-svg, .loader__fire-image {
+		width: 13rem;
+		height: 13rem;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

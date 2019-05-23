@@ -16,6 +16,9 @@
    
     <div class="loader-container">
         <div class="loader__message-container">
+            <div class="loader__smoke" id="smoke-1"></div>
+            <div class="loader__smoke" id="smoke-2"></div>
+            <div class="loader__smoke" id="smoke-3"></div>
             <div class="loader__message-icon">
               <svg class="loader__fire-svg" width="80" height="80">
                 <!-- <div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> -->
@@ -36,8 +39,8 @@
             <h1 id="nav__title">Comfy Hut</h1>
 
             <div class="nav__margin"></div>
-            <button id="nav__menu" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
-            <ul class="nav__items">
+            <button id="nav__menu" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navbarResponsive">Menu</button>
+            <ul class="nav__items" id="navbarResponsive">
                 <li><a class="nav__item"href="#services">services</a></li>
                 <li><a class="nav__item"href="#products">products</a></li>
                 <li><a class="nav__item"href="#about">about</a></li>

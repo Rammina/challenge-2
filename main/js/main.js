@@ -1,3 +1,5 @@
+
+
 // Screen loader
 
 setTimeout(function () {
@@ -11,7 +13,8 @@ setTimeout(function () {
 		console.log(" HTML loaded");
 		document.querySelector(".loader-container").classList.add("no-display"); //Get rid of the loader
 	}
-}, 100000);
+}, 600);
+
 // Checking SVG support
 
 var svgSupport = !!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect;
