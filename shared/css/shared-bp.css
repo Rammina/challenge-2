@@ -104,30 +104,38 @@
 /*Change to rem if I forgot any pixel value*/
 @media screen and (min-width: 600px) and (min-height: 600px) {
 	.loader__message-container{
-		width: 24rem;
+		width: 18rem;
 		height: 24rem;
 		margin: calc(50vh - 12rem) auto;
 
 
 	}
+	.loader__smoke {
+		box-shadow: 0 0 0 1.5px #eee, 0 0 0 7px black;
+		margin-top: 1.5rem;
+	}
 	#smoke-1{
-		width: 5.7rem;
-		height: 3rem;
+		width: 4.275rem;
+		height: 2.25rem;
 	}
 	#smoke-2{
-		width: 3.8rem;
-		height: 2.5rem;
+		width: 3.15rem;
+		height: 1.875rem;
 	}
 	#smoke-3{
-		width: 3rem;
-		height: 1.7rem;
+		width: 2.25rem;
+		height: 1.2750000000000001rem;
+		margin-top: 0.9rem;
 	}
 	.loader__message-icon{
-		width: 13rem;
+		width: 9.75rem;
 	}
 	.loader__fire-svg, .loader__fire-image {
-		width: 13rem;
-		height: 13rem;
+		width: 9.75rem;
+		height: 9.75rem;
+	}
+	.loader__p {
+		font-size: 1.45rem;
 	}
 }
 
