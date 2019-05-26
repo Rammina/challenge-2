@@ -1,0 +1,2 @@
+Fix the spacing for modal windows
+it's better to make them bigger then have them look as if they were cut

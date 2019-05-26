@@ -1,0 +1,2 @@
+Make sure touch start and click do not ghost
+this applies to all interactive elements
